@@ -44,3 +44,25 @@ def signup(request):
             return render(request, 'landing.html', context)
     else:
         return render(request, 'landing.html')
+
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = auth.authenticate(
+            username=username,
+            password=password
+        )
+        if user is not None:
+            auth.login(request, user)
+            return redirect('profile')
+        else:
+            context = {
+                'error': 'Invalid credentials.',
+            }
+            return render(request, 'login.html', context)
+    else:
+        return render(request, 'login.html')
+
