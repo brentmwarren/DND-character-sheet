@@ -21,3 +21,26 @@ def signup(request):
                     'error': 'Username is already taken.',
                 }
                 return render(request, 'landing.html', context)
+            else:
+                if User.objects.filter(email=email).exists():
+                    context = {
+                        'error': 'That email already exists.',
+                    }
+                    return render(request, 'landing.html', context)
+                else:
+                    user = User.objects.create_user(
+                        username=username,
+                        email=email,
+                        password=password,
+                        first_name=first_name,
+                        last_name=last_name,
+                    )
+                    user.save()
+                    return redirect('profile')
+        else:
+            context = {
+                'error': 'Passwords do not match.',
+            }
+            return render(request, 'landing.html', context)
+    else:
+        return render(request, 'landing.html')
