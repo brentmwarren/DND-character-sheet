@@ -2,35 +2,38 @@
 
 {% block content %}
 
-<section class="form-section">
-  <form action="{% url 'signup' %}" method="POST">
-    {% csrf_token %}
-    <p>
-      <label for="first-name">First Name</label>
-      <input type="text" name="first-name" id="first-name" maxlength="25" minlength="2" required>
-    </p>
-    <p>
-      <label for="last-name">Last Name</label>
-      <input type="text" name="last-name" id="last-name" maxlength="25" minlength="2" required>
-    </p>
-    <p>
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username" maxlength="25" minlength="2" required>
-    </p>
-    <p>
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" maxlength="25" minlength="2" required>
-    </p>
-    <p>
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" maxlength="25" minlength="4" required>
-    </p>
-    <p>
-      <label for="password2">Confirm Password</label>
-      <input type="password" name="password2" id="password2" maxlength="25" minlength="4" required>
-    </p>
-    <button type="submit">Sign Up</button>
-  </form>
-</section>
+<div class="container">
+  <section class="form-section jumbotron signup-form">
+    <h1>Create an Account</h1>
+    <form action="{% url 'signup' %}" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="first-name">First Name</label>
+        <input class="form-control" type="text" name="first-name" id="first-name" maxlength="25" minlength="2" required>
+      </div>
+      <div class="form-group">
+        <label for="last-name">Last Name</label>
+        <input class="form-control" type="text" name="last-name" id="last-name" maxlength="25" minlength="2" required>
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input class="form-control" type="text" name="username" id="username" maxlength="25" minlength="2" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" type="email" name="email" id="email" maxlength="25" minlength="2" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input class="form-control" type="password" name="password" id="password" maxlength="25" minlength="4" required>
+      </div>
+      <div class="form-group">
+        <label for="password2">Confirm Password</label>
+        <input class="form-control" type="password" name="password2" id="password2" maxlength="25" minlength="4" required>
+      </div>
+      <button class="btn btn-secondary" type="submit">Sign Up</button>
+    </form>
+  </section>
+</div>
 
 {% endblock %}
