@@ -1,3 +1,9 @@
+body {
+  background: url("https://media.giphy.com/media/eidlFWEMajNjzNEmqT/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .jumbotron {
   max-width: 540px;
 }
