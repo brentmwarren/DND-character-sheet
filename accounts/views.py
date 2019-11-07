@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.contrib.auth.models import User
 
-from dnd_character_app import Character
+from dnd_character_app.models import Character
+# from .forms import LoginForm
 
 # Create your views here.
 
@@ -36,7 +37,7 @@ def signup(request):
                         last_name=last_name,
                     )
                     user.save()
-                    return redirect('profile')
+                    return redirect('https://google.com')
         else:
             context = {
                 'error': 'Passwords do not match.',
@@ -57,7 +58,7 @@ def login(request):
         )
         if user is not None:
             auth.login(request, user)
-            return redirect('profile')
+            return redirect('https://google.com')
         else:
             context = {
                 'error': 'Invalid credentials.',
