@@ -1,8 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<ul class = "characters">
 
+<div class="character-list-header">
+  <div class="character-list-welcome">
+    Welcome to the realm!
+  </div>
+  <a class="character-list-create-link" href="#">
+    <button class="character-list-create btn btn-outline-danger">Create a Character</button>
+  </a>
+</div>
+
+<h1 class="character-list-heading">
+  Your Characters
+</h1>
+<ul class="character-list list-group">
+  {% for character in characters %}
+  <li class="character-list-item">
+    {{ character.name }}
+  </li>
+  {% endfor %}
+  <!--
+    <li class="character-list-item list-group-item">hi</li>
+  <li class="character-list-item list-group-item">hi</li>
+  <li class="character-list-item list-group-item">hi</li> -->
 </ul>
 
 {% endblock %}
