@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="form-section">
+  <form action="{% url 'signup' %}" method="POST">
+    {% csrf_token %}
+    <p>
+      <label for="first-name">First Name</label>
+      <input type="text" name="first-name" id="first-name" maxlength="25" minlength="2" required>
+    </p>
+    <p>
+      <label for="last-name">Last Name</label>
+      <input type="text" name="last-name" id="last-name" maxlength="25" minlength="2" required>
+    </p>
+    <p>
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" maxlength="25" minlength="2" required>
+    </p>
+    <p>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" maxlength="25" minlength="2" required>
+    </p>
+    <p>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" maxlength="25" minlength="4" required>
+    </p>
+    <p>
+      <label for="password2">Confirm Password</label>
+      <input type="password" name="password2" id="password2" maxlength="25" minlength="4" required>
+    </p>
+    <button type="submit">Sign Up</button>
+  </form>
+</section>
+
+{% endblock %}
