@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<section class="character-header" style="background-image:url({{character.image}})">
+  <section class="character-info">
+    <h2>
+      {{ character.name }}
+      <a href="{% url 'character_edit' pk=character.pk %}">edit</a>
+    </h2>
+    <h4>
+      <a href="{% url 'character_delete' pk=character.pk %}" class="delete">delete</a>
+    </h4>
+  </section>
+</section>
+
+<ul class="traits">
+    <h2>Traits </h2>
+    {{ character.bio }}
+    {{ character.campaign_name }}
+    {{ character.experience }}
+    {{ character.char_class }}
+    {{ character.level }}
+    {{ character.race }}
+    {{ character.strength }}
+    {{ character.dexterity }}
+    {{ character.constitution }}
+    {{ character.intelligence }}
+    {{ character.wisdom }}
+    {{ character.charisma }}
+    {{ character.armor_class }}
+    {{ character.hit_points }}
+    {{ character.proficiency_bonus }}
+    {{ character.alignment }}
+    {{ character.campaign }}
+</ul>
+
+{% endblock %}
