@@ -1,8 +1,18 @@
-body {
+/* body {
   background: url("https://media.giphy.com/media/OK5LK5zLFfdm/giphy.gif");
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
+
+body { 
+  margin: 0; 
+  padding: 0;
+  background: url('https://media.giphy.com/media/OK5LK5zLFfdm/giphy.gif') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    }
 
 .jumbotron {
   max-width: 540px;
