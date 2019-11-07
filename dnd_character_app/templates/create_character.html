@@ -1,0 +1,49 @@
+{% extends'base.html' %}
+
+{% block content %}
+
+    <section class="form-section">
+        <form action="{% url 'register' %}" method="POST" class="character-create-form">
+            {% csrf_token %}
+            <p>
+                <label for="name">Name</label>
+                <input type="text" name="name" maxlength="25" minlength="2" required>
+            </p>
+            <p>
+                <label for="bio">Bio</label>
+                <input type="text" name="bio" maxlength="500">
+            </p>
+            <p>
+                <label for="campaign_name">Campaign Name</label>
+                <input type="text" name="campaign_name" maxlength="25">
+            </p>
+            <p>
+                <label for="experience">Experience</label>
+                <input type="text" name="experience">
+            </p>
+            <p>
+                <label for="char_class">Character Class</label>
+                <input type="text" name="char_class">
+            </p>
+            <p>
+                <label for="level">Level</label>
+                <input type="text" name="level" required>
+            </p>
+
+    </form>
+    </section>
+
+{% endblock %}
+
+level = models.PositiveIntegerField(default=0)
+race = models.CharField(max_length=100)
+strength = models.PositiveIntegerField()
+dexterity = models.PositiveIntegerField()
+constitution = models.PositiveIntegerField()
+intelligence = models.PositiveIntegerField()
+wisdom = models.PositiveIntegerField()
+charisma = models.PositiveIntegerField()
+armor_class = models.CharField(max_length=100)
+hit_points = models.PositiveIntegerField()
+proficiency_bonus = models.PositiveIntegerField()
+alignment = models.CharField(max_length=100)
