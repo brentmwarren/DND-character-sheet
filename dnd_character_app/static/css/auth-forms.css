@@ -1,0 +1,11 @@
+.jumbotron {
+  max-width: 540px;
+}
+
+.login-form {
+  margin: 60px auto;
+}
+
+.signup-form {
+  margin: 60px 0px 0 auto;
+}
