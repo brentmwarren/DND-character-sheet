@@ -37,7 +37,7 @@ def signup(request):
                         last_name=last_name,
                     )
                     user.save()
-                    return redirect('https://google.com')
+                    return redirect('character_list')
         else:
             context = {
                 'error': 'Passwords do not match.',
@@ -58,7 +58,7 @@ def login(request):
         )
         if user is not None:
             auth.login(request, user)
-            return redirect('https://google.com')
+            return redirect('character_list')
         else:
             context = {
                 'error': 'Invalid credentials.',
