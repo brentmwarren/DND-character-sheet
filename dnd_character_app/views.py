@@ -47,7 +47,7 @@ def character_create(request):
       context = {
         'error': 'Error!',
       }
-      return render(request, 'create_character.html', context)
+      return render(request, 'character_form.html', context)
   else:
     form = CharacterForm()
     labels = []
@@ -56,46 +56,34 @@ def character_create(request):
       labels.append(label)
 
     context = {
-      'fields': zip(form.fields.keys(), labels)
+      'fields': zip(form.fields.keys(), labels),
+      'header': 'Create a character',
     }
-    return render(request, 'create_character.html', context)
+    return render(request, 'character_form.html', context)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#the code below is taking into account we are us django forms. If this is not the case, we will ned to re-factore it
 @login_required
 def character_edit(request, pk):
-  character = Character.objects.get(id=pk)
+  character = Character.objects.get(pk=pk)
   if request.method == 'POST':
     form = CharacterForm(request.POST, instance=character)
     if form.is_valid():
-      artist = form.save()
-      return redirect('character_detail', pk=artist.pk)
+      data = form.cleaned_data
+      Character.objects.filter(pk=pk).update(**data)
+      return redirect('character_detail', pk=character.pk)
   else:
     form = CharacterForm(instance=character)
-  context = {'form': form, 'header': f"Edit {character.name}"}
+    labels = []
+    for field in form.fields.keys():
+      label = field.replace('_', ' ').title()
+      labels.append(label)
+
+      context = {
+        'fields': zip(form.fields.keys(), labels),
+        'header': f"Edit {character.name}"
+      }
   return render(request, 'character_form.html', context)
+
 
 @login_required
 def character_delete(request, pk):
