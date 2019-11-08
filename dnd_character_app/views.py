@@ -12,6 +12,11 @@ from .forms import CharacterForm
 def home(request):
   return HttpResponse("Goodbye rocket ship. Hello Home.")
 
+
+def developers(request):
+    return render(request, 'developers.html')
+
+
 def api_characters(request):
   all_characters = Character.objects.all()
   data = []
@@ -19,6 +24,8 @@ def api_characters(request):
     data.append({"name": artist.name})
   return JsonResponse({"data":data, "status":200})
 
+
+@login_required
 def character_list(request):
   characters = Character.objects.all()
   context = {"characters":characters}
@@ -29,7 +36,7 @@ def character_detail(request,pk):
   context = {"character":character}
   return render(request, 'character_detail.html', context)
 
-#the code below is taking into account we are us django forms. If this is not the case, we will ned to re-factore it
+
 @login_required
 def character_create(request):
   if request.method == 'POST':
