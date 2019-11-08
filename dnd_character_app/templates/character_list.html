@@ -16,16 +16,13 @@
 </h1>
 <ul class="character-list list-group">
   {% for character in characters %}
-  <a class="character-list-item list-group-item" href="#">
+  <a class="character-list-item list-group-item"
+     href="{% url 'character_detail' pk=character.pk %}">
     <li>
       {{ character.name }}
     </li>
   </a>
   {% endfor %}
-  <!--
-    <li class="character-list-item list-group-item">hi</li>
-  <li class="character-list-item list-group-item">hi</li>
-  <li class="character-list-item list-group-item">hi</li> -->
 </ul>
 
 {% endblock %}
