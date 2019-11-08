@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1>Create a Character</h1>
+<h1>{{ header }}</h1>
 <section class="character-create-body container">
   <form action="{% url 'character_create' %}" method="POST" class="character-create-form">
     {% csrf_token %}
