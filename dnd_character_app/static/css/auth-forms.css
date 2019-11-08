@@ -3,19 +3,6 @@
   background-repeat: no-repeat;
   background-size: cover;
 } */
-<<<<<<< HEAD
-
-body { 
-  margin: 0; 
-  padding: 0;
-  background: url('https://media.giphy.com/media/OK5LK5zLFfdm/giphy.gif') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-    }
-=======
->>>>>>> 5a664488b6468d5c256a015b9ea119624b8b6683
 
 .jumbotron {
   max-width: 540px;

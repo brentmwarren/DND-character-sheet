@@ -50,10 +50,16 @@
 /* -------- STYLES -------- */
 
 .character-detail-body {
-  background: #faefd5;
+  background: #F9F8F4;
   max-width: 900px;
   margin: 40px auto;
   padding: 30px;
+  box-shadow: 3px 11px 20px -4px rgba(0,0,0,0.24)
+}
+
+.character-detail-traits {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .character-detail-header {
@@ -82,10 +88,26 @@
 }
 
 .text-area {
-  background-color: #dddddd;
+  background-color: #e7e7e7;
   margin: 0 20px;
   padding: 10px 20px;
   font-family: "Kalam", cursive;
+  border-radius: 10px;
+  border: 2px solid #cccccc;
+}
+
+.text-area-class-race {
+  width: 255px;
+}
+
+.text-area-bio {
+  width: 100%;
+  min-height: 92px;
+}
+
+.character-detail-class-race {
+  display: flex;
+  justify-content: space-between;
 }
 
 .character-detail-stats {
