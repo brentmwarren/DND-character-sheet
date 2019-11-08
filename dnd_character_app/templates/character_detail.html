@@ -1,37 +1,112 @@
 {% extends 'base.html'%}
 {% block content %}
 
-<section class="character-header" style="background-image:url({{character.image}})">
-  <section class="character-info">
-    <h2>
-      {{ character.name }}
+<div class="character-detail-body">
+  <section class="character-detail-header">
+    <div>
+      <img src="{{ character.image }}" alt="{{ character.name }}" width="60px">
+      <span class="character-detail-name">{{ character.name }}</span>
+    </div>
+    <div>
       <a href="{% url 'character_edit' pk=character.pk %}">edit</a>
-    </h2>
-    <h4>
       <a href="{% url 'character_delete' pk=character.pk %}" class="delete">delete</a>
-    </h4>
+    </div>
   </section>
-</section>
+  <section class="character-detail-traits">
+    <div class="character-detail-class-race">
+      <p class="label label-class-race">class:</p>
+      <div class="text-area text-area-class-race">
+        <span class="text-area-contents">{{ character.char_class }}</span>
+      </div>
+      <p class="label label-class-race">race:</p>
+      <div class="text-area text-area-class-race">
+        <span class="text-area-contents">{{ character.race }}</span>
+      </div>
+    </div>
+    <div class="character-detail-values">
+      <p class="label label-value">speed:</p>
+      <div class="text-area text-area-value">
+        <span class="text-area-contents">sup</span>
+      </div>
+      <p class="label label-value">max hp:</p>
+      <div class="text-area text-area-value">
+        <span class="text-area-contents">{{ character.hit_points }}</span>
+      </div>
+      <p class="label label-value">ac:</p>
+      <div class="text-area text-area-value">
+        <span class="text-area-contents">{{ character.armor_class }}</span>
+      </div>
+      <p class="label label-value">exp:</p>
+      <div class="text-area text-area-value">
+        <span class="text-area-contents">{{ character.experience }}</span>
+      </div>
+    </div>
+    <div class="character-detail-stats">
+      <div class="character-detail-stat">
+        <p class="label label-stat">wisdom</p>
+        <div class="text-area text-area-stat">
+          <span class="text-area-contents">{{ character.wisdom }}</span>
+        </div>
+      </div>
+      <div class="character-detail-stat">
+        <p class="label label-stat">strength</p>
+        <div class="text-area text-area-stat">
+          <span class="text-area-contents">{{ character.strength }}</span>
+        </div>
+      </div>
+      <div class="character-detail-stat">
+        <p class="label label-stat">intelligence</p>
+        <div class="text-area text-area-stat">
+          <span class="text-area-contents">{{ character.intelligence }}</span>
+        </div>
+      </div>
+      <div class="character-detail-stat">
+        <p class="label label-stat">charisma</p>
+        <div class="text-area text-area-stat">
+          <span class="text-area-contents">{{ character.charisma }}</span>
+        </div>
+      </div>
+      <div class="character-detail-stat">
+        <p class="label label-stat">constitution</p>
+        <div class="text-area text-area-stat">
+          <span class="text-area-contents">{{ character.constitution }}</span>
+        </div>
+      </div>
+      <div class="character-detail-stat">
+        <p class="label label-stat">dexterity</p>
+        <div class="text-area text-area-stat">
+          <span class="text-area-contents">{{ character.dexterity }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="character-detail-bio">
+      <p class="label label-bio">notes:</p>
+      <div class="text-area text-area-bio">
+        <span class="text-area-contents">{{ character.bio }}</span>
+      </div>
+    </div>
+  </section>
 
-<ul class="traits">
-    <h2>Traits </h2>
-    {{ character.bio }}
-    {{ character.campaign_name }}
-    {{ character.experience }}
-    {{ character.char_class }}
-    {{ character.level }}
-    {{ character.race }}
-    {{ character.strength }}
-    {{ character.dexterity }}
-    {{ character.constitution }}
-    {{ character.intelligence }}
-    {{ character.wisdom }}
-    {{ character.charisma }}
-    {{ character.armor_class }}
-    {{ character.hit_points }}
-    {{ character.proficiency_bonus }}
-    {{ character.alignment }}
-    {{ character.campaign }}
-</ul>
+  <!-- <ul class="traits">
+      <h2>Traits </h2>
+      {{ character.bio }}
+      {{ character.campaign_name }}
+      {{ character.experience }}
+      {{ character.char_class }}
+      {{ character.level }}
+      {{ character.race }}
+      {{ character.strength }}
+      {{ character.dexterity }}
+      {{ character.constitution }}
+      {{ character.intelligence }}
+      {{ character.wisdom }}
+      {{ character.charisma }}
+      {{ character.armor_class }}
+      {{ character.hit_points }}
+      {{ character.proficiency_bonus }}
+      {{ character.alignment }}
+      {{ character.campaign }}
+  </ul> -->
+</div>
 
 {% endblock %}
