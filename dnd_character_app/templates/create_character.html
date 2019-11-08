@@ -1,9 +1,9 @@
-{% extends'base.html' %}
+{% extends 'base.html' %}
         
 {% block content %}
 
     <section id="character_create_body">
-        <form action="{% url 'register' %}" method="POST" class="character-create-form">
+        <form action="{% url 'character_create' %}" method="POST" class="character-create-form">
             {% csrf_token %}
             <p>
                 <label for="name">Name</label>
@@ -43,7 +43,7 @@
             </p>
             <p>
                 <label for="constitution">Constitution</label>
-                <input type="text" name="constitution" maxlength="2" minlength="1" required>
+                <input type="text" name="constitution" maxlength="90" minlength="1" required>
             </p>
             <p>
                 <label for="intelligence">Intelligence</label>
@@ -72,6 +72,17 @@
             <p>
                 <label for="alignment">Alignment</label>
                 <input type="text" name="alignment" maxlength="25" minlength="3" required>
+            </p>
+            <p>
+                <label for="campaign">Campaign</label>
+                <input type="text" name="campaign" maxlength="25" minlength="3" required>
+            </p>
+            <p>
+                <label for="image">image URL</label>
+                <input type="text" name="image" maxlength="200">
+            </p>
+            <p>
+                <button type="submit"> Submit </button>
             </p>
 
 
