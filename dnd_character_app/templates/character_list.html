@@ -16,9 +16,11 @@
 </h1>
 <ul class="character-list list-group">
   {% for character in characters %}
-  <li class="character-list-item">
-    {{ character.name }}
-  </li>
+  <a class="character-list-item list-group-item" href="#">
+    <li>
+      {{ character.name }}
+    </li>
+  </a>
   {% endfor %}
   <!--
     <li class="character-list-item list-group-item">hi</li>
