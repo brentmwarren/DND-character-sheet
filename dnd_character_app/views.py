@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from django.contrib.auth.decorators import login_required
+from django.utils.text import slugify
 
 from .models import Character
+from .forms import CharacterForm
 
 # Create your views here.
 
@@ -31,27 +33,17 @@ def character_detail(request,pk):
 @login_required
 def character_create(request):
   if request.method == 'POST':
-    name = request.POST['name']
-    bio = request.POST['bio']
-    campaign_name = request.POST['campaign_name']
-    experience = request.POST['experience']
-    char_class = request.POST['char_class']
-    level = request.POST['level']
-    race = request.POST['race']
-    strength = request.POST['strength']
-    dexterity = request.POST['dexterity']
-    constitution = request.POST['constitution']
-    intelligence = request.POST['intelligence']
-    wisdom = request.POST['wisdom']
-    charisma = request.POST['charisma']
-    armor_class = request.POST['armor_class']
-    hit_points = request.POST['hit_points']
-    proficiency_bonus = request.POST['proficiency_bonus']
-    alignment = request.POST['alignment']
-    campaign = request.POST['campaign']
-    image = request.POST['image']
-    return redirect('character_detail', pk=character.pk)
-  else: 
+    form = CharacterForm(request.POST)
+    if form.is_valid():
+      data = form.cleaned_data
+      slug = slugify(data['name'])
+      character = Character.objects.create(
+        **data,
+        slug=slug,
+        user=request.user
+      )
+      return redirect('character_detail', pk=character.pk)
+  else:
     return render(request, 'create_character.html')
 
 

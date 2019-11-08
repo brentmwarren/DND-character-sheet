@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-        
+
 {% block content %}
 
     <section id="character_create_body">
@@ -75,7 +75,7 @@
             </p>
             <p>
                 <label for="campaign">Campaign</label>
-                <input type="text" name="campaign" maxlength="25" minlength="3" required>
+                <input type="text" name="campaign" maxlength="25" required>
             </p>
             <p>
                 <label for="image">image URL</label>
@@ -90,6 +90,3 @@
     </section>
 
 {% endblock %}
-
-level = models.PositiveIntegerField(default=0)
-proficiency_bonus = models.PositiveIntegerField()
