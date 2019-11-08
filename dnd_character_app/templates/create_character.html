@@ -2,91 +2,21 @@
 
 {% block content %}
 
-    <section id="character_create_body">
-        <form action="{% url 'character_create' %}" method="POST" class="character-create-form">
-            {% csrf_token %}
-            <p>
-                <label for="name">Name</label>
-                <input type="text" name="name" maxlength="25" minlength="2" required>
-            </p>
-            <p>
-                <label for="bio">Bio</label>
-                <input type="text" name="bio" maxlength="500">
-            </p>
-            <p>
-                <label for="campaign_name">Campaign Name</label>
-                <input type="text" name="campaign_name" maxlength="25">
-            </p>
-            <p>
-                <label for="experience">Experience</label>
-                <input type="text" name="experience">
-            </p>
-            <p>
-                <label for="char_class">Character Class</label>
-                <input type="text" name="char_class" maxlength="25" minlength="2" required>
-            </p>
-            <p>
-                <label for="level">Level</label>
-                <input type="text" name="level" required>
-            </p>
-            <p>
-                <label for="race">Race</label>
-                <input type="text" name="race" maxlength="25" minlength="2" required>
-            </p>
-            <p>
-                <label for="strength">Strength</label>
-                <input type="text" name="strength" maxlength="2" minlength="1" required>
-            </p>
-            <p>
-                <label for="dexterity">Dexterity</label>
-                <input type="text" name="dexterity" maxlength="2" minlength="1" required>
-            </p>
-            <p>
-                <label for="constitution">Constitution</label>
-                <input type="text" name="constitution" maxlength="90" minlength="1" required>
-            </p>
-            <p>
-                <label for="intelligence">Intelligence</label>
-                <input type="text" name="intelligence" maxlength="2" minlength="1" required>
-            </p>
-            <p>
-                <label for="wisdom">Wisdom</label>
-                <input type="text" name="wisdom" maxlength="2" minlength="1" required>
-            </p>
-            <p>
-                <label for="charisma">Charisma</label>
-                <input type="text" name="charisma" maxlength="2" minlength="1" required>
-            </p>
-            <p>
-                <label for="armor_class">Armor Class</label>
-                <input type="text" name="armor_class" maxlength="2" minlength="1" required>
-            </p>
-            <p>
-                <label for="hit_points">Hit Points</label>
-                <input type="text" name="hit_points" maxlength="2" minlength="1" required>
-            </p>
-            <p>
-                <label for="proficiency_bonus">Proficiency Bonus</label>
-                <input type="text" name="proficiency_bonus" required>
-            </p>
-            <p>
-                <label for="alignment">Alignment</label>
-                <input type="text" name="alignment" maxlength="25" minlength="3" required>
-            </p>
-            <p>
-                <label for="campaign">Campaign</label>
-                <input type="text" name="campaign" maxlength="25" required>
-            </p>
-            <p>
-                <label for="image">image URL</label>
-                <input type="text" name="image" maxlength="200">
-            </p>
-            <p>
-                <button type="submit"> Submit </button>
-            </p>
-
-
-    </form>
-    </section>
+<h1>Create a Character</h1>
+<section class="character-create-body container">
+  <form action="{% url 'character_create' %}" method="POST" class="character-create-form">
+    {% csrf_token %}
+    {% for field, label in fields %}
+    <div class="form-group">
+      <label for="{{ field }}">{{ label }}</label>
+      <input class="form-control form-control-sm" type="text" name="{{ field }}" id="{{ field }}">
+    </div>
+    {% if error %}
+      <p>{{ error }}</p>
+    {% endif %}
+    {% endfor %}
+    <button class="btn btn-danger" type="submit">Save</button>
+  </form>
+</section>
 
 {% endblock %}

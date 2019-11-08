@@ -43,8 +43,22 @@ def character_create(request):
         user=request.user
       )
       return redirect('character_detail', pk=character.pk)
+    else:
+      context = {
+        'error': 'Error!',
+      }
+      return render(request, 'create_character.html', context)
   else:
-    return render(request, 'create_character.html')
+    form = CharacterForm()
+    labels = []
+    for field in form.fields.keys():
+      label = field.replace('_', ' ').title()
+      labels.append(label)
+
+    context = {
+      'fields': zip(form.fields.keys(), labels)
+    }
+    return render(request, 'create_character.html', context)
 
 
 
