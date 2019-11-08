@@ -15,10 +15,10 @@ Technologies: (languages, external libraries, APIs)
 HTML
 CSS
 Python
-bootstrap
-django
-jinja
-postgres
+Bootstrap
+Django
+Jinja
+PostgreSQL
 Vietnamese coffee
 
 Wish List / Future Development
@@ -39,3 +39,36 @@ Contributors (with links to their GitHub profiles)
 Brent Warren: https://git.generalassemb.ly/bwarren
 Lindsey Hiltner: https://git.generalassemb.ly/lindseyhiltner
 David Mcgrouther: https://git.generalassemb.ly/david-mcgrouther
+
+
+
+
+
+
+Every project must have all of the following requirements met to be considered complete:
+
+
+Data Validation: Your application should validate incoming data before entering it into the database.
+
+Home & About Pages: Create a landing page (homepage) that clearly explains your app's value proposition and guides the user through the "get started" funnel. Create an about page that includes photos and brief bios of your team members.
+
+User Experience: Ensure a pleasing and logical user experience. Use a framework like Bootstrap to enhance and ease your CSS styling.
+Responsive Design: Make sure your app looks great on a phone or tablet.
+
+Heroku: Deploy your app to Heroku. Ensure no app secrets are exposed.
+
+Github: Projects must have a minimum of 60 specific commits.
+
+
+Flexible Technical Requirements
+Your app should have 3 out of the 5 following options:
+
+CHECK User Login Make sure you have authentication and authorization.
+
+no ajax used (yet) AJAX Use AJAX to communicate with the server without reloading the page when appropriate.
+
+External APIs Use a third-party API back-end package to integrate third-party data into your app.
+
+JavaScript & jQuery: Add dynamic client-side behavior with event-driven functionality.
+
+User-Friendly URLs: Make pretty URLs that don't expose database IDs.
