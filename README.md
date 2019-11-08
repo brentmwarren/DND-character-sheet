@@ -36,6 +36,6 @@ Wish List / Future Development
 
 
 Contributors (with links to their GitHub profiles)
-Brent Warren:
-Lindsey Hiltner:
-David Mcgrouther:
+Brent Warren: https://git.generalassemb.ly/bwarren
+Lindsey Hiltner: https://git.generalassemb.ly/lindseyhiltner
+David Mcgrouther: https://git.generalassemb.ly/david-mcgrouther
