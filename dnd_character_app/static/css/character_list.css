@@ -40,8 +40,11 @@
 .character-list-item {
   margin-left: 20px;
   margin-right: 20px;
+  color: #000000;
 }
 
 .character-list-item:hover {
   background-color: #eee;
+  text-decoration: none;
+  color: #000000;
 }

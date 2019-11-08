@@ -3,6 +3,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 } */
+<<<<<<< HEAD
 
 body { 
   margin: 0; 
@@ -13,6 +14,8 @@ body {
   -o-background-size: cover;
   background-size: cover;
     }
+=======
+>>>>>>> 5a664488b6468d5c256a015b9ea119624b8b6683
 
 .jumbotron {
   max-width: 540px;

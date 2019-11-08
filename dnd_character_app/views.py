@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
-from django.contrib.auth.decorators import login_required 
+from django.contrib.auth.decorators import login_required
 
 from .models import Character
 
@@ -89,7 +89,7 @@ def character_edit(request, pk):
   else:
     form = CharacterForm(instance=character)
   context = {'form': form, 'header': f"Edit {character.name}"}
-  return render(request, 'character_form.html', context)  
+  return render(request, 'character_form.html', context)
 
 @login_required
 def character_delete(request, pk):
