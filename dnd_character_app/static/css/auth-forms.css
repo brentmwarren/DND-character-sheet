@@ -14,4 +14,9 @@
 
 .signup-form {
   margin: 25px 0 0 auto;
+  background: url("../images/8izraLqeT copy.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* z-index: 1; */
 }
+
