@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/character_list.css' %}">
+  <title>Your Characters</title>
+{% endblock %}
 
 {% block content %}
 

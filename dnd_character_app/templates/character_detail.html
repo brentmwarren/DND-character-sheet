@@ -1,4 +1,12 @@
 {% extends 'base.html'%}
+{% load staticfiles %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/character_detail.css' %}">
+  <script defer src="{% static 'js/main.js' %}"></script>
+  <title>{{ character.name }}</title>
+{% endblock %}
+
 {% block content %}
 
 <div class="character-detail-body">

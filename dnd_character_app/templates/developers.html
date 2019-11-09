@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/developers.css' %}">
+  <title>About the Devs</title>
+{% endblock %}
 
 {% block content %}
 
@@ -16,7 +22,7 @@
             </div>
           </div>
         </div>
-      
+
         <div class="developers-column">
           <div class="developers-card">
             <img src="https://avatars.git.generalassemb.ly/u/23266?s=400" alt="Lindsey" style="width:100%" class="developer-picture">
@@ -28,7 +34,7 @@
             </div>
           </div>
         </div>
-      
+
         <div class="developers-column">
           <div class="developers-card">
             <img src="https://img4.goodfon.com/wallpaper/nbig/c/39/gary-jamroz-palma-elric-of-melnibone-elrik-iz-melnibone-maik.jpg" alt="David" style="width:100%" class="developer-picture">
@@ -41,5 +47,5 @@
           </div>
         </div>
       </div>
-    
+
 {% endblock %}
