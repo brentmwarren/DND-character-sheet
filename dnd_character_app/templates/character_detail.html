@@ -8,7 +8,6 @@
       <span class="character-detail-name">{{ character.name }}</span>
     </div>
     <div>
-      <a href="{% url 'character_edit' pk=character.pk %}">edit</a>
       <a href="{% url 'character_delete' pk=character.pk %}" class="delete">delete</a>
     </div>
   </section>
