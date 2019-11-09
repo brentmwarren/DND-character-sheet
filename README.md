@@ -1,17 +1,19 @@
 # project-2
 
-NOTE About:
+## About the project
 This is probably the most amazing DnD character sheet you'll ever use. Really, it's bananas. Even if you don't like DnD, you're about to.
 
 Our app was created for people who love DnD and for people who are just starting out. Elegantly designed, effective for real/fantasy world applications, and easy to use. This is for all your character needs in order to create, view, and organize all information needed for one heck of a campaign. We hope you enjoy it.
 
-Wireframes and user stories:
 
+## Wireframe
+[wireframe sketch](dnd_character_app/static/images/wireframe.png);
+## User Story
 
 Link to Heroku hosted project:
 
 
-Technologies: (languages, external libraries, APIs)
+## Technologies
 HTML
 CSS
 Python
@@ -21,7 +23,7 @@ Jinja
 PostgreSQL
 Vietnamese coffee
 
-Wish List / Future Development
+## Wish list/Future Development
 
 -User can create a “campaign” for other players to join
 -User who creates campaign is designated as “Dungeon Master” and can then view character sheets of players in the campaign
@@ -35,29 +37,27 @@ Wish List / Future Development
 -Users alignment/personality to affect background image when they are signed in (lawful good is an orderly castle, evil of some sort has a necromancer or lava in the background etc.)
 
 
-Contributors (with links to their GitHub profiles)
+## Contributors
 Brent Warren: https://git.generalassemb.ly/bwarren
 Lindsey Hiltner: https://git.generalassemb.ly/lindseyhiltner
 David Mcgrouther: https://git.generalassemb.ly/david-mcgrouther
 
 
 
-
-
+############################
 
 Every project must have all of the following requirements met to be considered complete:
 
 
-Data Validation: Your application should validate incoming data before entering it into the database.
+Lindsey: Data Validation: Your application should validate incoming data before entering it into the database.
 
-Home & About Pages: Create a landing page (homepage) that clearly explains your app's value proposition and guides the user through the "get started" funnel. Create an about page that includes photos and brief bios of your team members.
+David working on this: Home & About Pages: Create a landing page (homepage) that clearly explains your app's value proposition and guides the user through the "get started" funnel.
 
-User Experience: Ensure a pleasing and logical user experience. Use a framework like Bootstrap to enhance and ease your CSS styling.
+Brent: User Experience: Ensure a pleasing and logical user experience. Use a framework like Bootstrap to enhance and ease your CSS styling.
+
 Responsive Design: Make sure your app looks great on a phone or tablet.
 
-Heroku: Deploy your app to Heroku. Ensure no app secrets are exposed.
-
-Github: Projects must have a minimum of 60 specific commits.
+Github: Projects must have a minimum of 60 "specific" commits.
 
 
 Flexible Technical Requirements
@@ -71,4 +71,4 @@ External APIs Use a third-party API back-end package to integrate third-party da
 
 JavaScript & jQuery: Add dynamic client-side behavior with event-driven functionality.
 
-User-Friendly URLs: Make pretty URLs that don't expose database IDs.
+Brent: User-Friendly URLs: Make pretty URLs that don't expose database IDs.

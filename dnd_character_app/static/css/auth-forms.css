@@ -13,10 +13,22 @@
 }
 
 .signup-form {
-  margin: 25px 0 0 auto;
+  margin: 40px 0 0 auto;
   background: url("../images/8izraLqeT copy.png");
   background-repeat: no-repeat;
   background-size: cover;
-  /* z-index: 1; */
+  padding: 50px;
+}
+
+.landing h1 {
+  justify-content: center;
+}
+
+.landing form {
+  padding: 15px;
+}
+
+.landing {
+  background: url("https://cdn.wallpapersafari.com/4/79/6p4vPT.gif");
 }
 
