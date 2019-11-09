@@ -8,105 +8,140 @@
       <span class="character-detail-name">{{ character.name }}</span>
     </div>
     <div>
-      <a href="{% url 'character_edit' pk=character.pk %}">edit</a>
       <a href="{% url 'character_delete' pk=character.pk %}" class="delete">delete</a>
     </div>
   </section>
-  <section class="character-detail-traits">
+  <form class="character-detail-traits">
+    {% csrf_token %}
     <div class="character-detail-class-race">
       <p class="label label-class-race">class:</p>
-      <div class="text-area text-area-class-race">
-        <span class="text-area-contents">{{ character.char_class }}</span>
-      </div>
+      <input
+        class="text-area text-area-class-race"
+        type="text"
+        name="char_class"
+        value="{{ character.char_class }}"
+      >
       <p class="label label-class-race">race:</p>
-      <div class="text-area text-area-class-race">
-        <span class="text-area-contents">{{ character.race }}</span>
-      </div>
+      <input
+        class="text-area text-area-class-race"
+        type="text"
+        name="race"
+        value="{{ character.race }}"
+      >
+    </div>
+    <div class="character-detail-align-bknd">
+      <p class="label label-align-bknd">alignment:</p>
+      <input
+        class="text-area text-area-align-bknd"
+        type="text"
+        name="alignment"
+        value="{{ character.alignment }}"
+      >
+      <p class="label label-align-bknd">background:</p>
+      <input
+      class="text-area text-area-align-bknd"
+      type="text"
+      name="background"
+      value="{{ character.background }}"
+      >
     </div>
     <div class="character-detail-values">
       <p class="label label-value">speed:</p>
-      <div class="text-area text-area-value">
-        <span class="text-area-contents">sup</span>
-      </div>
+      <input
+        class="text-area text-area-value"
+        type="text"
+        name="speed"
+        value="{{ character.speed }}">
       <p class="label label-value">max hp:</p>
-      <div class="text-area text-area-value">
-        <span class="text-area-contents">{{ character.hit_points }}</span>
-      </div>
+      <input
+        class="text-area text-area-value"
+        type="text"
+        name="hit_points"
+        value="{{ character.hit_points }}"
+      >
       <p class="label label-value">ac:</p>
-      <div class="text-area text-area-value">
-        <span class="text-area-contents">{{ character.armor_class }}</span>
-      </div>
+      <input
+        class="text-area text-area-value"
+        type="text"
+        name="armor_class"
+        value="{{ character.armor_class }}"
+      >
       <p class="label label-value">exp:</p>
-      <div class="text-area text-area-value">
-        <span class="text-area-contents">{{ character.experience }}</span>
-      </div>
+      <input
+        class="text-area text-area-value"
+        type="text"
+        name="experience"
+        value="{{ character.experience }}"
+      >
     </div>
     <div class="character-detail-stats">
       <div class="character-detail-stat">
         <p class="label label-stat">wisdom</p>
-        <div class="text-area text-area-stat">
-          <span class="text-area-contents">{{ character.wisdom }}</span>
-        </div>
+        <input
+          class="text-area text-area-stat"
+          type="text"
+          name="wisdom"
+          value="{{ character.wisdom }}"
+        >
       </div>
       <div class="character-detail-stat">
         <p class="label label-stat">strength</p>
-        <div class="text-area text-area-stat">
-          <span class="text-area-contents">{{ character.strength }}</span>
-        </div>
+        <input
+          class="text-area text-area-stat"
+          type="text"
+          name="strength"
+          value="{{ character.strength }}"
+        >
       </div>
       <div class="character-detail-stat">
         <p class="label label-stat">intelligence</p>
-        <div class="text-area text-area-stat">
-          <span class="text-area-contents">{{ character.intelligence }}</span>
-        </div>
+        <input
+          class="text-area text-area-stat"
+          type="text"
+          name="intelligence"
+          value="{{ character.intelligence }}"
+        >
       </div>
       <div class="character-detail-stat">
         <p class="label label-stat">charisma</p>
-        <div class="text-area text-area-stat">
-          <span class="text-area-contents">{{ character.charisma }}</span>
-        </div>
+        <input
+          class="text-area text-area-stat"
+          type="text"
+          name="charisma"
+          value="{{ character.charisma }}"
+        >
       </div>
       <div class="character-detail-stat">
         <p class="label label-stat">constitution</p>
-        <div class="text-area text-area-stat">
-          <span class="text-area-contents">{{ character.constitution }}</span>
-        </div>
+        <input
+          class="text-area text-area-stat"
+          type="text"
+          name="constitution"
+          value="{{ character.constitution }}"
+        >
       </div>
       <div class="character-detail-stat">
         <p class="label label-stat">dexterity</p>
-        <div class="text-area text-area-stat">
-          <span class="text-area-contents">{{ character.dexterity }}</span>
-        </div>
+        <input
+          class="text-area text-area-stat"
+          type="text"
+          name="dexterity"
+          value="{{ character.dexterity }}"
+        >
       </div>
     </div>
-    <div class="character-detail-bio">
-      <p class="label label-bio">notes:</p>
-      <div class="text-area text-area-bio">
-        <span class="text-area-contents">{{ character.bio }}</span>
-      </div>
+    <div class="character-detail-notes">
+      <p class="label label-notes">notes:</p>
+      <input
+        class="text-area text-area-notes"
+        type="text"
+        name="notes"
+        value="{{ character.notes }}">
     </div>
-  </section>
-
-  <!-- <ul class="traits">
-      <h2>Traits </h2>
-      {{ character.bio }}
-      {{ character.campaign_name }}
-      {{ character.experience }}
-      {{ character.char_class }}
-      {{ character.level }}
-      {{ character.race }}
-      {{ character.strength }}
-      {{ character.dexterity }}
-      {{ character.constitution }}
-      {{ character.intelligence }}
-      {{ character.wisdom }}
-      {{ character.charisma }}
-      {{ character.armor_class }}
-      {{ character.hit_points }}
-      {{ character.proficiency_bonus }}
-      {{ character.alignment }}
-      {{ character.campaign }}
-  </ul> -->
+    <button
+      id="save-button"
+      class="btn btn-danger">Save</button>
+  </form>
 </div>
 
 {% endblock %}

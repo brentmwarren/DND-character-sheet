@@ -1,11 +1,14 @@
+import json
+
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_http_methods
 from django.utils.text import slugify
 
 from .models import Character
-from .forms import CharacterForm
+from .forms import CharacterForm, CharacterEditForm
 
 # Create your views here.
 
@@ -21,8 +24,12 @@ def api_characters(request):
   all_characters = Character.objects.all()
   data = []
   for character in all_characters:
-    data.append({"name": artist.name})
-  return JsonResponse({"data":data, "status":200})
+    data.append({"name": character.name})
+  return JsonResponse({
+    "data": data,
+    },
+    status=200
+  )
 
 
 @login_required
@@ -70,26 +77,15 @@ def character_create(request):
 
 
 @login_required
+@require_http_methods(['POST'])
 def character_edit(request, pk):
-  character = Character.objects.get(pk=pk)
-  if request.method == 'POST':
-    form = CharacterForm(request.POST, instance=character)
+    form = CharacterEditForm(json.loads(request.body))
     if form.is_valid():
-      data = form.cleaned_data
-      Character.objects.filter(pk=pk).update(**data)
-      return redirect('character_detail', pk=character.pk)
-  else:
-    form = CharacterForm(instance=character)
-    labels = []
-    for field in form.fields.keys():
-      label = field.replace('_', ' ').title()
-      labels.append(label)
-
-      context = {
-        'fields': zip(form.fields.keys(), labels),
-        'header': f"Edit {character.name}"
-      }
-  return render(request, 'character_form.html', context)
+        data = form.cleaned_data
+        Character.objects.filter(pk=pk).update(**data)
+        return JsonResponse({}, status=200)
+    else:
+        return JsonResponse(form.errors.get_json_data(), status=400)
 
 
 @login_required
