@@ -92,25 +92,34 @@
   margin: 0 20px;
   padding: 10px 20px;
   font-family: "Kalam", cursive;
+  font-size: 18px;
   border-radius: 10px;
   border: 2px solid #cccccc;
 }
 
-.text-area-class-race {
+.text-area-class-race,
+.text-area-align-bknd {
   width: 255px;
 }
 
-.text-area-bio {
+.text-area-value,
+.text-area-stat {
+  width: 65px;
+}
+
+.text-area-notes {
   width: 100%;
   min-height: 92px;
 }
 
-.character-detail-class-race {
+.character-detail-class-race,
+.character-detail-align-bknd {
   display: flex;
   justify-content: space-between;
 }
 
-.character-detail-stats {
+.character-detail-stats,
+.character-detail-values {
   display: flex;
   justify-content: space-around;
 }
