@@ -12,17 +12,6 @@ from .forms import CharacterForm, CharacterEditForm
 
 # Create your views here.
 
-# from django.views.generic.detail import DetailView
-# class PostDetailView(DetailView):
-#     model = Post
-#     # This file should exist somewhere to render your page
-#     template_name = 'your_blog/show_post.html'
-#     # Should match the value after ':' from url <slug:the_slug>
-#     slug_url_kwarg = 'the_slug'
-#     # Should match the name of the slug field on the model 
-#     slug_field = 'slug' # DetailView's default value: optional
-# post_detail_view = PostDetailView.as_view()
-
 def home(request):
   return HttpResponse("Goodbye rocket ship. Hello Home.")
 
@@ -104,5 +93,16 @@ def character_delete(request, pk):
   Character.objects.get(id=pk).delete()
   return redirect('character_list')
 
-def slug(self):
-  return slugify(self.name)
+# def slug(self):
+#   return slugify(self.name)
+
+# from django.views.generic.detail import DetailView
+# class PostDetailView(DetailView):
+#     model = Post
+#     # This file should exist somewhere to render your page
+#     template_name = 'your_blog/show_post.html'
+#     # Should match the value after ':' from url <slug:the_slug>
+#     slug_url_kwarg = 'the_slug'
+#     # Should match the name of the slug field on the model 
+#     slug_field = 'slug' # DetailView's default value: optional
+# post_detail_view = PostDetailView.as_view()

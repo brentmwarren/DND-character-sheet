@@ -34,5 +34,5 @@ class Character(models.Model):
     def __str__(self):
         return self.name
 
-    def slug(self):
-        return slugify(self.name)
+    # def slug(self):
+    #     return slugify(self.name)
