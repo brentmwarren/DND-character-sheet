@@ -38,6 +38,8 @@ def character_list(request):
   context = {"characters":characters}
   return render(request, 'character_list.html', context)
 
+
+@login_required
 def character_detail(request,pk):
   character = Character.objects.get(id=pk)
   context = {"character":character}
