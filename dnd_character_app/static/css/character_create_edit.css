@@ -1,3 +1,16 @@
 .character-create-body {
-    background-image: url("http://www.multiverse.org/imagehive/var/albums/artists/album20/Elric_ce1.jpg?m=1399263920")
+    background-image: url("http://clipart-library.com/images/kiMK4KqLT.gif")
+}
+
+h1 {
+    margin-top: 1%;
+    margin-left: 1%;
+    font-family: fantasy;
+    text-shadow: 2px 2px 5px white;
+}
+
+label {
+    font-family: fantasy;
+    text-shadow: 1px 1px 2.5px white;
+    font-size: 18px;
 }
