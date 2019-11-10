@@ -53,8 +53,6 @@ Lindsey: Data Validation: Your application should validate incoming data before 
 
 David working on this: Home & About Pages: Create a landing page (homepage) that clearly explains your app's value proposition and guides the user through the "get started" funnel.
 
-User Experience: Ensure a pleasing and logical user experience. Use a framework like Bootstrap to enhance and ease your CSS styling.
-
 Responsive Design: Make sure your app looks great on a phone or tablet.
 
 Github: Projects must have a minimum of 60 "specific" commits.

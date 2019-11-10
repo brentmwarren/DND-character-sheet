@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.template.defaultfilters import slugify
 
 # Create your models here.
 class Character(models.Model):
@@ -33,3 +34,7 @@ class Character(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        self.slug = self.slug or slugify(self.title)
+        super().save(*args, **kwargs)
