@@ -32,7 +32,7 @@
   background: url("https://cdn.wallpapersafari.com/4/79/6p4vPT.gif");
 }
 
-.form-section {
+#login-form {
   background: rgb(255, 255, 255, 0.8);
   box-shadow: 3px 3px 5px 5px black;
 }
