@@ -54,7 +54,9 @@
   max-width: 900px;
   margin: 40px auto;
   padding: 30px;
-  box-shadow: 3px 11px 20px -4px rgba(0,0,0,0.24)
+  box-shadow: 3px 11px 20px -4px rgba(0,0,0,0.24);
+  background-image: url("http://i.stack.imgur.com/kb0Zm.jpg");
+  background-size: cover;
 }
 
 .character-detail-traits {
