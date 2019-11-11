@@ -32,3 +32,26 @@
   background: url("https://cdn.wallpapersafari.com/4/79/6p4vPT.gif");
 }
 
+.form-section {
+  background: rgb(255, 255, 255, 0.8);
+  box-shadow: 3px 3px 5px 5px black;
+}
+
+#password, #username {
+  box-shadow: 1px 1px 2px 2px black;
+}
+
+/* for button on form */
+.btn-secondary {
+  font-family: fantasy;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-color: white;
+  box-shadow: 1px 1px 2px 2px black;
+}
+
+.btn-secondary:hover {
+  color: black;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-color: white;
+}

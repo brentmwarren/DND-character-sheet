@@ -7,6 +7,8 @@
 .character-list-welcome {
   font-size: 40px;
   font-weight: 600;
+  font-family: fantasy;
+  text-shadow: 2px 2px 5px white;
 }
 
 .character-list-create-link:hover {
@@ -17,11 +19,22 @@
   max-width: 250px;
   align-items: center;
   padding: 20px;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-family: fantasy;
+  color: rgb(0, 184, 216);
+  border-color: rgb(0, 184, 216);
+  color: white;
+  border-color: white;
 }
 
 .character-list-create:hover {
   color: #ffffff;
-  background-color: #dc3545;
+  background-color: rgb(0, 184, 216);
+  border-color: rgb(0, 184, 216);
+  color: black;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-color: white;
 }
 
 .character-list-create p {
@@ -31,6 +44,9 @@
 .character-list-heading {
   margin: 20px;
   font-size: 32px;
+  font-family: fantasy;
+  text-shadow: 2px 2px 5px rgb(0, 184, 216);
+  text-shadow: 2px 2px 5px white;
 }
 
 .character-list {
@@ -41,10 +57,17 @@
   margin-left: 20px;
   margin-right: 20px;
   color: #000000;
+  font-family: fantasy;
+  margin-bottom: 0.25%;
+  max-width: 500px;
+  background-color: rgb(255, 255, 255, 0.5);
 }
 
 .character-list-item:hover {
-  background-color: #eee;
+  background-color: rgb(226, 226, 226);
   text-decoration: none;
   color: #000000;
+  font-size: 27px;
+  text-shadow: 2px 2px 5px white;
+  transition-duration: 0.24s;
 }
