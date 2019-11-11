@@ -61,7 +61,7 @@ def character_create(request):
       return redirect('character_detail', pk=character.pk)
     else:
       context = {
-        'error': 'Error!',
+        'error': 'There has been an error. Please try again!",
       }
       return render(request, 'character_form.html', context)
   else:
