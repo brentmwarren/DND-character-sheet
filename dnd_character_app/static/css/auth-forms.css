@@ -73,4 +73,28 @@ below seems redundant
   font-family: fantasy;
 }
 
+.intro-content {
+  color: white;
+  font-family: fantasy;
+  font-size: 22px;
+}
 
+
+.introduction-header {
+  margin-top: 1.5%;
+  color: white;
+  font-family: fantasy;
+}
+
+.introduction {
+  text-align: center;
+}
+
+/*
+#introduction{
+  position:absolute;
+  top: 15%;
+  right: 5%;
+  margin: 10px;
+}
+*/
