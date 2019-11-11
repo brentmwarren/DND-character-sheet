@@ -23,7 +23,7 @@
       <a href="{% url 'character_delete' pk=character.pk %}" class="delete">delete</a>
     </div>
   </section>
-  <form class="character-detail-traits">
+  <form class="character-detail-traits" autocomplete="off">
     {% csrf_token %}
     <div class="character-detail-class-race">
       <label for="char_class" class="label label-class-race">class:</label>
@@ -114,6 +114,7 @@
           value="{{ character.wisdom }}"
           data-server-value="{{ character.wisdom }}"
         >
+        <span class="modifier">+0</span>
       </div>
       <div class="character-detail-stat">
         <label for="strength" class="label label-stat">strength</label>
@@ -125,6 +126,7 @@
           value="{{ character.strength }}"
           data-server-value="{{ character.strength }}"
         >
+        <span class="modifier">+0</span>
       </div>
       <div class="character-detail-stat">
         <label for="intelligence" class="label label-stat">intelligence</label>
@@ -136,6 +138,7 @@
           value="{{ character.intelligence }}"
           data-server-value="{{ character.intelligence }}"
         >
+        <span class="modifier">+0</span>
       </div>
       <div class="character-detail-stat">
         <label for="charisma" class="label label-stat">charisma</label>
@@ -147,6 +150,7 @@
           value="{{ character.charisma }}"
           data-server-value="{{ character.charisma }}"
         >
+        <span class="modifier">+0</span>
       </div>
       <div class="character-detail-stat">
         <label for="constitution" class="label label-stat">constitution</label>
@@ -158,6 +162,7 @@
           value="{{ character.constitution }}"
           data-server-value="{{ character.constitution }}"
         >
+        <span class="modifier">+0</span>
       </div>
       <div class="character-detail-stat">
         <label for="dexterity" class="label label-stat">dexterity</label>
@@ -169,6 +174,7 @@
           value="{{ character.dexterity }}"
           data-server-value="{{ character.dexterity }}"
         >
+        <span class="modifier">+0</span>
       </div>
     </div>
     <div class="character-detail-notes">

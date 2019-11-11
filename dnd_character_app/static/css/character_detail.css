@@ -115,6 +115,11 @@ body {
   text-align: center;
 }
 
+.modifier {
+  color: #b22222;
+  font-family: "MedievalSharp", cursive;
+}
+
 .text-area-notes {
   width: 100%;
   min-height: 92px;
