@@ -1,4 +1,20 @@
+const calculateModifier = (stat) => {
+  let modifier = Math.floor(0.5*(stat - 10));
+  if (stat === '') {
+    return '--';
+  } else if (modifier >= 0) {
+    return `+${modifier}`;
+  } else {
+    return `${modifier}`;
+  }
+};
 
+const updateModifier = (input) => {
+  const modifier = calculateModifier(input.value);
+  $(input).siblings('.modifier').text(modifier);
+}
+
+// ---- FORM FEEDBACK ---- //
 const parseErrors = (err) => {
   for (const field in err) {
     $(`*[name="${field}"]`).css('border', '2px solid #b22222');
@@ -71,9 +87,15 @@ const submitForm = async (e) => {
 }
 
 const main = () => {
+  const stats = document.querySelectorAll('.text-area-stat');
+  for (const input of stats) {
+    updateModifier(input);
+  }
+
   const saveButton = document.getElementById('save-button');
   saveButton.onclick = submitForm;
-  $('.text-area').on('change keyup paste', updateStatus);
+  $('.text-area').on('keyup paste', updateStatus);
+  $('.text-area-stat').on('keyup', (e) => updateModifier(e.target));
 }
 
 window.onload = main;
