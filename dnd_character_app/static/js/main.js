@@ -30,6 +30,7 @@ const updateStatus = function() {
     $('#status').text('UNSAVED CHANGES');
   } else {
     $('#status').text('No unsaved changes.');
+    removeErrorStyling();
   }
 };
 
@@ -47,18 +48,13 @@ const removeErrorStyling = () => {
 const submitForm = async (e) => {
   e.preventDefault();
   removeErrorStyling();
-  const inputs = document.querySelectorAll('input');
-  const characterInfo = {};
-  let csrf_token;
 
+  const csrf_token = $('input[name="csrfmiddlewaretoken"]').val();
+  const inputs = document.querySelectorAll('.text-area');
+  const characterInfo = {};
   for (const input of inputs) {
-    if (input.name === 'csrfmiddlewaretoken') {
-      csrf_token = input.value;
-    } else {
-      characterInfo[input.name] = input.value;
-    }
+    characterInfo[input.name] = input.value;
   }
-  characterInfo['notes'] = $('.text-area-notes').val();
 
   const pk = window.location.pathname.split('/')[2];
   const response = await fetch(
@@ -83,6 +79,7 @@ const submitForm = async (e) => {
     parseErrors(errors);
   } else {
     console.log('boooo....server side');
+    $('#status').text('Sorry something\'s gone wrong...');
   }
 }
 
