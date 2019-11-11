@@ -1,6 +1,8 @@
 body {
-  background: url("https://media.giphy.com/media/OK5LK5zLFfdm/giphy.gif");
+  background: url("https://cdna.artstation.com/p/assets/images/images/005/450/924/large/ian-campbell-shot1-watermark.jpg?1545535463");
+  background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
 }
 
@@ -21,23 +23,10 @@ body {
   margin: 0 auto;
 }
 
-.landing h1 {
-  justify-content: center;
-}
 
-.landing form {
-  padding: 15px;
-}
 
-.landing {
-  background: url("https://cdn.wallpapersafari.com/4/79/6p4vPT.gif");
-  /* below is david edits/additions */
-  /*background: url("https://cdnb.artstation.com/p/assets/images/images/017/112/139/large/gregory-shevtsov-highresscreenshot00026.jpg?1554695562"); */
-  background: url("https://cdna.artstation.com/p/assets/images/images/005/450/924/large/ian-campbell-shot1-watermark.jpg?1545535463");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
+
 
 /* for button on form */
 .btn-secondary {
@@ -57,12 +46,6 @@ body {
 /* below is for getting the login form and sign up form to be the same format */
 .form-control {
   box-shadow: 1px 1px 2px 2px black;
-}
-
-.form-section {
-  background: rgb(255, 255, 255, 0.8);
-  box-shadow: 3px 3px 5px 5px black;
-  font-family: fantasy;
 }
 
 .intro-content {
@@ -97,4 +80,10 @@ body {
 .funnel-header {
   margin-top: 3%;
   font-size: 40px;
+}
+
+.form-section {
+  background: rgb(255, 255, 255, 0.8);
+  box-shadow: 3px 3px 5px 5px black;
+  font-family: fantasy;
 }
