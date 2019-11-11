@@ -30,22 +30,13 @@ body {
 
 .landing {
   background: url("https://cdn.wallpapersafari.com/4/79/6p4vPT.gif");
+  /* below is david edits/additions */
+  /*background: url("https://cdnb.artstation.com/p/assets/images/images/017/112/139/large/gregory-shevtsov-highresscreenshot00026.jpg?1554695562"); */
+  background: url("https://cdna.artstation.com/p/assets/images/images/005/450/924/large/ian-campbell-shot1-watermark.jpg?1545535463");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-
-
-/*
-below seems redundant
-#password, #username {
-  box-shadow: 1px 1px 2px 2px black;
-}
-
-#login-form {
-  background: rgb(255, 255, 255, 0.8);
-  box-shadow: 3px 3px 5px 5px black;
-}
-
-*/
 
 /* for button on form */
 .btn-secondary {
@@ -71,30 +62,39 @@ below seems redundant
   background: rgb(255, 255, 255, 0.8);
   box-shadow: 3px 3px 5px 5px black;
   font-family: fantasy;
+  margin: 0 auto;
 }
 
 .intro-content {
   color: white;
   font-family: fantasy;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 
 .introduction-header {
-  margin-top: 1.5%;
+  margin-top: 2.2%;
   color: white;
   font-family: fantasy;
+  font-size: 60px;
 }
 
 .introduction {
   text-align: center;
+  margin-right: 10%;
+  margin-left: 10%
 }
 
-/*
-#introduction{
-  position:absolute;
-  top: 15%;
-  right: 5%;
-  margin: 10px;
+.user-funnel {
+  text-align: center;
+  color: white;
+  font-family: fantasy;
+  font-size: 20px;
+  margin-left: 1%;
+  margin-right: 1%;
 }
-*/
+
+.funnel-header {
+  margin-top: 3%;
+  font-size: 40px;
+}
