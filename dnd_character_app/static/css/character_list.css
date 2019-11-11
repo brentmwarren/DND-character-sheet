@@ -1,3 +1,12 @@
+body {
+  background-image:url('https://i.pinimg.com/originals/c1/b1/e2/c1b1e237c954d9b35703a3bb8671bc4a.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
 .character-list-header {
   display: flex;
   justify-content: space-between;
@@ -51,6 +60,7 @@
 
 .character-list {
   list-style: none;
+  text-align: center;
 }
 
 .character-list-item {
