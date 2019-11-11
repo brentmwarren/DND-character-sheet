@@ -38,6 +38,8 @@ def character_list(request):
   context = {"characters":characters}
   return render(request, 'character_list.html', context)
 
+
+@login_required
 def character_detail(request,pk):
   character = Character.objects.get(id=pk)
   context = {"character":character}
@@ -83,7 +85,7 @@ def character_edit(request, pk):
     if form.is_valid():
         data = form.cleaned_data
         Character.objects.filter(pk=pk).update(**data)
-        return JsonResponse({}, status=200)
+        return JsonResponse(data, status=200)
     else:
         return JsonResponse(form.errors.get_json_data(), status=400)
 

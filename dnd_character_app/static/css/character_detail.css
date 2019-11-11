@@ -54,7 +54,9 @@
   max-width: 900px;
   margin: 40px auto;
   padding: 30px;
-  box-shadow: 3px 11px 20px -4px rgba(0,0,0,0.24)
+  box-shadow: 3px 11px 20px -4px rgba(0,0,0,0.24);
+  background-image: url("http://i.stack.imgur.com/kb0Zm.jpg");
+  background-size: cover;
 }
 
 .character-detail-traits {
@@ -79,6 +81,7 @@
   display: flex;
   align-items: center;
   margin: 40px 0;
+  max-width: 100%;
 }
 
 .label {
@@ -88,23 +91,24 @@
 }
 
 .text-area {
+  box-sizing: border-box;
   background-color: #e7e7e7;
   margin: 0 20px;
   padding: 10px 20px;
   font-family: "Kalam", cursive;
   font-size: 18px;
-  border-radius: 10px;
-  border: 2px solid #cccccc;
+  border-radius: 4px;
+  border: 2px solid #dddddd;
 }
 
-.text-area-class-race,
 .text-area-align-bknd {
-  width: 255px;
+  width: 210px;
 }
 
 .text-area-value,
 .text-area-stat {
   width: 65px;
+  text-align: center;
 }
 
 .text-area-notes {
@@ -135,4 +139,15 @@
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 0;
+}
+
+.status {
+  display: inline-block;
+  font-size: 12px;
+  margin-left: 10px;
+  color: #8b8b8b;
+}
+
+.error-msg {
+  color: red;
 }
