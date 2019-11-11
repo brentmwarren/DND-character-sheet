@@ -3,12 +3,16 @@
 
 {% block head %}
   <link rel="stylesheet" href="{% static 'css/character_detail.css' %}">
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous" defer>
+  </script>
   <script defer src="{% static 'js/main.js' %}"></script>
   <title>{{ character.name }}</title>
 {% endblock %}
 
 {% block content %}
-
 <div class="character-detail-body">
   <section class="character-detail-header">
     <div>
@@ -28,6 +32,7 @@
         type="text"
         name="char_class"
         value="{{ character.char_class }}"
+        data-server-value="{{ character.char_class }}"
       >
       <p class="label label-class-race">race:</p>
       <input
@@ -35,6 +40,7 @@
         type="text"
         name="race"
         value="{{ character.race }}"
+        data-server-value="{{ character.race }}"
       >
     </div>
     <div class="character-detail-align-bknd">
@@ -44,6 +50,7 @@
         type="text"
         name="alignment"
         value="{{ character.alignment }}"
+        data-server-value="{{ character.alignment }}"
       >
       <p class="label label-align-bknd">background:</p>
       <input
@@ -51,6 +58,7 @@
       type="text"
       name="background"
       value="{{ character.background }}"
+      data-server-value="{{ character.background }}"
       >
     </div>
     <div class="character-detail-values">
@@ -59,13 +67,16 @@
         class="text-area text-area-value"
         type="text"
         name="speed"
-        value="{{ character.speed }}">
+        value="{{ character.speed }}"
+        data-server-value="{{ character.speed }}"
+      >
       <p class="label label-value">max hp:</p>
       <input
         class="text-area text-area-value"
         type="text"
         name="hit_points"
         value="{{ character.hit_points }}"
+        data-server-value="{{ character.hit_points }}"
       >
       <p class="label label-value">ac:</p>
       <input
@@ -73,6 +84,7 @@
         type="text"
         name="armor_class"
         value="{{ character.armor_class }}"
+        data-server-value="{{ character.armor_class }}"
       >
       <p class="label label-value">exp:</p>
       <input
@@ -80,6 +92,7 @@
         type="text"
         name="experience"
         value="{{ character.experience }}"
+        data-server-value="{{ character.experience }}"
       >
     </div>
     <div class="character-detail-stats">
@@ -90,6 +103,7 @@
           type="text"
           name="wisdom"
           value="{{ character.wisdom }}"
+          data-server-value="{{ character.wisdom }}"
         >
       </div>
       <div class="character-detail-stat">
@@ -99,6 +113,7 @@
           type="text"
           name="strength"
           value="{{ character.strength }}"
+          data-server-value="{{ character.strength }}"
         >
       </div>
       <div class="character-detail-stat">
@@ -108,6 +123,7 @@
           type="text"
           name="intelligence"
           value="{{ character.intelligence }}"
+          data-server-value="{{ character.intelligence }}"
         >
       </div>
       <div class="character-detail-stat">
@@ -117,6 +133,7 @@
           type="text"
           name="charisma"
           value="{{ character.charisma }}"
+          data-server-value="{{ character.charisma }}"
         >
       </div>
       <div class="character-detail-stat">
@@ -126,6 +143,7 @@
           type="text"
           name="constitution"
           value="{{ character.constitution }}"
+          data-server-value="{{ character.constitution }}"
         >
       </div>
       <div class="character-detail-stat">
@@ -135,6 +153,7 @@
           type="text"
           name="dexterity"
           value="{{ character.dexterity }}"
+          data-server-value="{{ character.dexterity }}"
         >
       </div>
     </div>
@@ -144,12 +163,17 @@
         class="text-area text-area-notes"
         type="text"
         name="notes"
-        value="{{ character.notes }}">
+        value="{{ character.notes }}"
+        data-server-value="{{ character.notes }}"
+      >
     </div>
     <button
       id="save-button"
-      class="btn btn-danger">Save</button>
+      class="btn btn-danger">
+        Save
+    </button>
+    <span id="status" class="status">No unsaved changes.</span>
   </form>
+  <div id="err-feedback"></div>
 </div>
-
 {% endblock %}

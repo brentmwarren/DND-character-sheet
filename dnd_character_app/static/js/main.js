@@ -1,6 +1,36 @@
 
+const parseErrors = (err) => {
+  for (const field in err) {
+    $(`input[name="${field}"]`).css('border', '2px solid #b22222');
+    $('#err-feedback').append(`
+      <div class="error-msg">
+        ${field}: ${err[field][0].message}
+      </div>`);
+  }
+};
+
+const updateStatus = function() {
+  if ($(this).val() != $(this).data('server-value')) {
+    $('#status').text('UNSAVED CHANGES');
+  } else {
+    $('#status').text('No unsaved changes.');
+  }
+};
+
+const updateServerData = (updated) => {
+  for (const field in updated) {
+    $(`input[name="${field}"]`).attr('data-server-value', `${updated[field]}`);
+  }
+};
+
+const removeErrorStyling = () => {
+  $('#err-feedback').empty();
+  $('input').css('border', '2px solid #cccccc');
+};
+
 const submitForm = async (e) => {
-  e.preventDefault()
+  e.preventDefault();
+  removeErrorStyling();
   const inputs = document.querySelectorAll('input');
   const characterInfo = {};
   let csrf_token;
@@ -27,10 +57,13 @@ const submitForm = async (e) => {
   );
 
   if (response.status === 200) {
+    $('#status').text('No unsaved changes.');
     console.log('you did it!');
+    const updated = await response.json();
+    updateServerData(updated);
   } else if (response.status == 400) {
-    const errors = await response.json()
-    console.log(errors);
+    const errors = await response.json();
+    parseErrors(errors);
   } else {
     console.log('boooo....server side');
   }
@@ -39,6 +72,7 @@ const submitForm = async (e) => {
 const main = () => {
   const saveButton = document.getElementById('save-button');
   saveButton.onclick = submitForm;
+  $('input').on('change keyup paste', updateStatus);
 }
 
 window.onload = main;
