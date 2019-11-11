@@ -61,7 +61,8 @@ def character_create(request):
       return redirect('character_detail', pk=character.pk)
     else:
       context = {
-        'error': 'There has been an error. Please try again!",
+      if data['name'] == '':
+        'error' = "Enter a name"
       }
       return render(request, 'character_form.html', context)
   else:

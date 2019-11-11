@@ -15,9 +15,8 @@
     {% for field, label in fields %}
     <div class="form-group">
       <label for="{{ field }}">{{ label }}</label>
-      <input class="form-control form-control-sm" required type="text" name="{{ field }}" id="{{ field }}">
+      <input class="form-control form-control-sm" type="text" name="{{ field }}" id="{{ field }}">
     </div>
-    
     {% if error %}
       <p>{{ error }}</p>
     {% endif %}
