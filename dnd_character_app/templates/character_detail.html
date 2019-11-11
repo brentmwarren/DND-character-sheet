@@ -26,144 +26,158 @@
   <form class="character-detail-traits">
     {% csrf_token %}
     <div class="character-detail-class-race">
-      <p class="label label-class-race">class:</p>
+      <label for="char_class" class="label label-class-race">class:</label>
       <input
         class="text-area text-area-class-race"
         type="text"
         name="char_class"
+        id="char_class"
         value="{{ character.char_class }}"
         data-server-value="{{ character.char_class }}"
       >
-      <p class="label label-class-race">race:</p>
+      <label for="race" class="label label-class-race">race:</label>
       <input
         class="text-area text-area-class-race"
         type="text"
         name="race"
+        id="race"
         value="{{ character.race }}"
         data-server-value="{{ character.race }}"
       >
     </div>
     <div class="character-detail-align-bknd">
-      <p class="label label-align-bknd">alignment:</p>
+      <label for="alignment" class="label label-align-bknd">alignment:</label>
       <input
         class="text-area text-area-align-bknd"
         type="text"
         name="alignment"
+        id="alignment"
         value="{{ character.alignment }}"
         data-server-value="{{ character.alignment }}"
       >
-      <p class="label label-align-bknd">background:</p>
+      <label for="background" class="label label-align-bknd">background:</label>
       <input
       class="text-area text-area-align-bknd"
       type="text"
       name="background"
+      id="background"
       value="{{ character.background }}"
       data-server-value="{{ character.background }}"
       >
     </div>
     <div class="character-detail-values">
-      <p class="label label-value">speed:</p>
+      <label for="speed" class="label label-value">speed:</label>
       <input
         class="text-area text-area-value"
         type="text"
         name="speed"
+        id="speed"
         value="{{ character.speed }}"
         data-server-value="{{ character.speed }}"
       >
-      <p class="label label-value">max hp:</p>
+      <label for="hit_points" class="label label-value">max hp:</label>
       <input
         class="text-area text-area-value"
         type="text"
         name="hit_points"
+        id="hit_points"
         value="{{ character.hit_points }}"
         data-server-value="{{ character.hit_points }}"
       >
-      <p class="label label-value">ac:</p>
+      <label for="armor_class" class="label label-value">ac:</label>
       <input
         class="text-area text-area-value"
         type="text"
         name="armor_class"
+        id="armor_class"
         value="{{ character.armor_class }}"
         data-server-value="{{ character.armor_class }}"
       >
-      <p class="label label-value">exp:</p>
+      <label for="experience" class="label label-value">exp:</label>
       <input
         class="text-area text-area-value"
         type="text"
         name="experience"
+        id="experience"
         value="{{ character.experience }}"
         data-server-value="{{ character.experience }}"
       >
     </div>
     <div class="character-detail-stats">
       <div class="character-detail-stat">
-        <p class="label label-stat">wisdom</p>
+        <label for="wisdom" class="label label-stat">wisdom</label>
         <input
           class="text-area text-area-stat"
           type="text"
           name="wisdom"
+          id="wisdom"
           value="{{ character.wisdom }}"
           data-server-value="{{ character.wisdom }}"
         >
       </div>
       <div class="character-detail-stat">
-        <p class="label label-stat">strength</p>
+        <label for="strength" class="label label-stat">strength</label>
         <input
           class="text-area text-area-stat"
           type="text"
           name="strength"
+          id="strength"
           value="{{ character.strength }}"
           data-server-value="{{ character.strength }}"
         >
       </div>
       <div class="character-detail-stat">
-        <p class="label label-stat">intelligence</p>
+        <label for="intelligence" class="label label-stat">intelligence</label>
         <input
           class="text-area text-area-stat"
           type="text"
           name="intelligence"
+          id="intelligence"
           value="{{ character.intelligence }}"
           data-server-value="{{ character.intelligence }}"
         >
       </div>
       <div class="character-detail-stat">
-        <p class="label label-stat">charisma</p>
+        <label for="charisma" class="label label-stat">charisma</label>
         <input
           class="text-area text-area-stat"
           type="text"
           name="charisma"
+          id="charisma"
           value="{{ character.charisma }}"
           data-server-value="{{ character.charisma }}"
         >
       </div>
       <div class="character-detail-stat">
-        <p class="label label-stat">constitution</p>
+        <label for="constitution" class="label label-stat">constitution</label>
         <input
           class="text-area text-area-stat"
           type="text"
           name="constitution"
+          id="constitution"
           value="{{ character.constitution }}"
           data-server-value="{{ character.constitution }}"
         >
       </div>
       <div class="character-detail-stat">
-        <p class="label label-stat">dexterity</p>
+        <label for="dexterity" class="label label-stat">dexterity</label>
         <input
           class="text-area text-area-stat"
           type="text"
           name="dexterity"
+          id="dexterity"
           value="{{ character.dexterity }}"
           data-server-value="{{ character.dexterity }}"
         >
       </div>
     </div>
     <div class="character-detail-notes">
-      <p class="label label-notes">notes:</p>
+      <label for="notes" class="label label-notes">notes:</label>
       <textarea
         class="text-area text-area-notes"
         type="text"
         name="notes"
-        value="{{ character.notes }}"
+        id="notes"
         data-server-value="{{ character.notes }}"
       >{{ character.notes }}</textarea>
     </div>
