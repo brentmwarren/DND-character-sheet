@@ -50,7 +50,7 @@
 /* -------- STYLES -------- */
 
 body {
-  background: #dddddd;
+  background: #f8f2df;
 }
 
 .character-detail-body {
@@ -72,7 +72,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .character-detail-name {
@@ -84,25 +84,25 @@ body {
 .character-detail-traits > div {
   display: flex;
   align-items: center;
-  margin: 40px 0;
+  margin: 20px 0;
   max-width: 100%;
 }
 
 .label {
   color: #b22222;
-  font-size: 20px;
+  font-size: 18px;
   font-family: "MedievalSharp", cursive;
 }
 
 .text-area {
   box-sizing: border-box;
-  background-color: #e7e7e7;
-  margin: 0 20px;
+  background-color: #f9f4e4;
+  margin: 0 10px;
   padding: 10px 20px;
   font-family: "Kalam", cursive;
   font-size: 18px;
   border-radius: 4px;
-  border: 2px solid #dddddd;
+  border: 2px solid #dcd5bd;
 }
 
 .text-area-align-bknd {
@@ -120,13 +120,18 @@ body {
   font-family: "MedievalSharp", cursive;
 }
 
+.text-area-saving_throws {
+  margin-left: 0;
+}
+
 .text-area-notes {
   width: 100%;
   min-height: 92px;
 }
 
 .character-detail-class-race,
-.character-detail-align-bknd {
+.character-detail-align-bknd,
+.character-detail-skills-saving {
   display: flex;
   justify-content: space-between;
 }
@@ -134,7 +139,7 @@ body {
 .character-detail-stats,
 .character-detail-values {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .character-detail-stat {
@@ -142,6 +147,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.label-value {
+  font-size: 18px;
 }
 
 .label-stat {
