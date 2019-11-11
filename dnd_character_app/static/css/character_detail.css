@@ -49,6 +49,10 @@
 
 /* -------- STYLES -------- */
 
+body {
+  background: #dddddd;
+}
+
 .character-detail-body {
   background: #F9F8F4;
   max-width: 900px;
@@ -68,7 +72,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 75px;
+  margin-bottom: 50px;
 }
 
 .character-detail-name {
