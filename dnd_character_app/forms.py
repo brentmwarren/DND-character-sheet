@@ -52,4 +52,8 @@ class CharacterEditForm(forms.ModelForm):
             'armor_class',
             'hit_points',
             'alignment',
+            'level',
+            'skill_proficiencies',
+            'saving_throws',
+            'proficiency_bonus',
         )
