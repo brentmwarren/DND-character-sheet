@@ -16,7 +16,7 @@
 <div class="character-detail-body">
   <section class="character-detail-header">
     <div>
-      <img src="{{ character.image }}" alt="{{ character.name }}" width="60px">
+      <img src="{{ character.image }}" alt="{{ character.name }}" width="80px">
       <span class="character-detail-name">{{ character.name }}</span>
     </div>
     <div>
@@ -66,6 +66,15 @@
       >
     </div>
     <div class="character-detail-values">
+        <label for="level" class="label label-value">level:</label>
+        <input
+          class="text-area text-area-value"
+          type="text"
+          name="level"
+          id="level"
+          value="{{ character.level }}"
+          data-server-value="{{ character.level }}"
+        >
       <label for="speed" class="label label-value">speed:</label>
       <input
         class="text-area text-area-value"
@@ -185,7 +194,35 @@
         name="notes"
         id="notes"
         data-server-value="{{ character.notes }}"
-      >{{ character.notes }}</textarea>
+      >{{ character.notes }}
+      </textarea>
+    </div>
+    <div class="character-detail-skills-saving">
+      <label for="skills" class="label label-skills-saving">skills:</label>
+      <textarea
+        class="text-area text-area-skills"
+        type="text"
+        name="skill_proficiencies"
+        id="skills"
+        data-server-value="{{ character.skill_proficiencies }}"
+      >{{ character.skill_proficiencies }}</textarea>
+      <label for="saving_throws" class="label label-skills-saving">saving throws:</label>
+      <textarea
+        class="text-area text-area-saving_throws"
+        type="text"
+        name="saving_throws"
+        id="saving_throws"
+        data-server-value="{{ character.saving_throws }}"
+      >{{ character.saving_throws }}</textarea>
+      <label for="proficiency_bonus" class="label label-skills-saving">prof bonus:</label>
+      <input
+          class="text-area text-area-stat"
+          type="text"
+          name="proficiency_bonus"
+          id="proficiency_bonus"
+          value="{{ character.proficiency_bonus }}"
+          data-server-value="{{ character.proficiency_bonus }}"
+        >
     </div>
     <button
       id="save-button"
