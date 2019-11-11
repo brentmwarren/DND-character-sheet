@@ -136,3 +136,10 @@
   text-transform: uppercase;
   margin-bottom: 0;
 }
+
+
+/* David edits */
+.character-detail-body {
+  background-image: url("http://i.stack.imgur.com/kb0Zm.jpg");
+  box-shadow: 3px 3px 5px 6px black; 
+}

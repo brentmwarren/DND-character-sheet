@@ -32,14 +32,20 @@
   background: url("https://cdn.wallpapersafari.com/4/79/6p4vPT.gif");
 }
 
+
+
+/*
+below seems redundant
+#password, #username {
+  box-shadow: 1px 1px 2px 2px black;
+}
+
 #login-form {
   background: rgb(255, 255, 255, 0.8);
   box-shadow: 3px 3px 5px 5px black;
 }
 
-#password, #username {
-  box-shadow: 1px 1px 2px 2px black;
-}
+*/
 
 /* for button on form */
 .btn-secondary {
@@ -55,3 +61,16 @@
   background-color: rgb(255, 255, 255, 0.5);
   border-color: white;
 }
+
+/* below is for getting the login form and sign up form to be the same format */
+.form-control {
+  box-shadow: 1px 1px 2px 2px black;
+}
+
+.form-section {
+  background: rgb(255, 255, 255, 0.8);
+  box-shadow: 3px 3px 5px 5px black;
+  font-family: fantasy;
+}
+
+
