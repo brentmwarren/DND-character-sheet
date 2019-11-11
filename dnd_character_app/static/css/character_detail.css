@@ -89,6 +89,7 @@
 }
 
 .text-area {
+  box-sizing: border-box;
   background-color: #e7e7e7;
   margin: 0 20px;
   padding: 10px 20px;
@@ -143,4 +144,8 @@
   font-size: 12px;
   margin-left: 10px;
   color: #8b8b8b;
+}
+
+.error-msg {
+  color: red;
 }

@@ -1,7 +1,7 @@
 
 const parseErrors = (err) => {
   for (const field in err) {
-    $(`input[name="${field}"]`).css('border', '2px solid #b22222');
+    $(`*[name="${field}"]`).css('border', '2px solid #b22222');
     $('#err-feedback').append(`
       <div class="error-msg">
         ${field}: ${err[field][0].message}
@@ -42,6 +42,7 @@ const submitForm = async (e) => {
       characterInfo[input.name] = input.value;
     }
   }
+  characterInfo['notes'] = $('.text-area-notes').val();
 
   const pk = window.location.pathname.split('/')[2];
   const response = await fetch(
@@ -72,7 +73,7 @@ const submitForm = async (e) => {
 const main = () => {
   const saveButton = document.getElementById('save-button');
   saveButton.onclick = submitForm;
-  $('input').on('change keyup paste', updateStatus);
+  $('.text-area').on('change keyup paste', updateStatus);
 }
 
 window.onload = main;

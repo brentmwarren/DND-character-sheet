@@ -159,13 +159,13 @@
     </div>
     <div class="character-detail-notes">
       <p class="label label-notes">notes:</p>
-      <input
+      <textarea
         class="text-area text-area-notes"
         type="text"
         name="notes"
         value="{{ character.notes }}"
         data-server-value="{{ character.notes }}"
-      >
+      >{{ character.notes }}</textarea>
     </div>
     <button
       id="save-button"
