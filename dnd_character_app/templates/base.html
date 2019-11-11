@@ -14,7 +14,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand navbar-dark bg-dark">
-      <a href="/signup" class="navbar-brand">DnD Character Creator</a>
+      <a href="{% url 'signup' %}" class="navbar-brand">DnD Character Creator</a>
       <section class="navbar-nav ml-auto">
         {% if user.is_authenticated %}
           <a class="nav-link" href="{% url 'character_list' %}">
