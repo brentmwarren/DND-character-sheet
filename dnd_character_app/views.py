@@ -3,6 +3,7 @@ import json
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
+from django.core.exceptions import PermissionDenied
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_http_methods
 from django.utils.text import slugify
@@ -13,35 +14,25 @@ from .forms import CharacterForm, CharacterEditForm
 # Create your views here.
 
 def home(request):
-  return HttpResponse("Goodbye rocket ship. Hello Home.")
+  return render(request, 'landing.html')
 
 
 def developers(request):
     return render(request, 'developers.html')
 
 
-def api_characters(request):
-  all_characters = Character.objects.all()
-  data = []
-  for character in all_characters:
-    data.append({"name": character.name})
-  return JsonResponse({
-    "data": data,
-    },
-    status=200
-  )
-
-
 @login_required
 def character_list(request):
-  characters = Character.objects.all()
+  characters = Character.objects.filter(user=request.user)
   context = {"characters":characters}
   return render(request, 'character_list.html', context)
 
 
 @login_required
-def character_detail(request,pk):
+def character_detail(request, pk):
   character = Character.objects.get(id=pk)
+  if character.user != request.user:
+    raise PermissionDenied
   context = {"character":character}
   return render(request, 'character_detail.html', context)
 
@@ -81,6 +72,9 @@ def character_create(request):
 @login_required
 @require_http_methods(['POST'])
 def character_edit(request, pk):
+    character = Character.objects.get(pk=pk)
+    if character.user != request.user:
+        raise PermissionDenied
     form = CharacterEditForm(json.loads(request.body))
     if form.is_valid():
         data = form.cleaned_data
@@ -92,5 +86,8 @@ def character_edit(request, pk):
 
 @login_required
 def character_delete(request, pk):
-  Character.objects.get(id=pk).delete()
+  character = Character.objects.get(pk=pk)
+  if character.user != request.user:
+      raise PermissionDenied
+  character.delete()
   return redirect('character_list')
