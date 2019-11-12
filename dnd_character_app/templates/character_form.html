@@ -12,15 +12,24 @@
 <section class="character-create-body container">
   <form action="{% url 'character_create' %}" method="POST" class="character-create-form">
     {% csrf_token %}
-    {% for field, label in fields %}
     <div class="form-group">
-      <label for="{{ field }}">{{ label }}</label>
-      <input class="form-control form-control-sm" type="text" name="{{ field }}" id="{{ field }}">
+      <label for="name">Name</label>
+      <input
+      class="form-control form-control-sm"
+      type="text" name="name"
+      id="name"
+      required>
+    </div>
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input
+      class="form-control form-control-sm"
+      name="image"
+      id="image">
     </div>
     {% if error %}
       <p>{{ error }}</p>
     {% endif %}
-    {% endfor %}
     <button class="btn btn-danger" type="submit">Save</button>
   </form>
 </section>

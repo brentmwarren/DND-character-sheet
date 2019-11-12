@@ -24,7 +24,6 @@ class Character(models.Model):
     skill_proficiencies = models.TextField(blank=True)
     saving_throws = models.TextField(blank=True)
     alignment = models.CharField(max_length=100, blank=True)
-    campaign = models.CharField(max_length=100, default=None)
     image = models.TextField(default="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthesocietypages.org%2Fsocimages%2Ffiles%2F2009%2F05%2Fnopic_192.gif&f=1&nofb=1")
     slug = models.SlugField(max_length=40)
     user = models.ForeignKey(User,
