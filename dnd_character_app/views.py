@@ -51,9 +51,9 @@ def character_create(request):
       )
       return redirect('character_detail', pk=character.pk)
     else:
-      context = {
-        'error': 'Error!',
-      }
+      data = form.errors
+      if data.get('name') is not None:
+        context = {'error': 'Please, enter a name'}
       return render(request, 'character_form.html', context)
   else:
     form = CharacterForm()
@@ -91,3 +91,17 @@ def character_delete(request, pk):
       raise PermissionDenied
   character.delete()
   return redirect('character_list')
+
+# def slug(self):
+#   return slugify(self.name)
+
+# from django.views.generic.detail import DetailView
+# class PostDetailView(DetailView):
+#     model = Post
+#     # This file should exist somewhere to render your page
+#     template_name = 'your_blog/show_post.html'
+#     # Should match the value after ':' from url <slug:the_slug>
+#     slug_url_kwarg = 'the_slug'
+#     # Should match the name of the slug field on the model 
+#     slug_field = 'slug' # DetailView's default value: optional
+# post_detail_view = PostDetailView.as_view()
