@@ -44,6 +44,9 @@
         <input class="form-control form-control-sm" type="password" name="password2" id="password2" maxlength="25" minlength="4" required>
       </div>
       <button class="btn btn-secondary" type="submit">Sign Up</button>
+      {% if error %}
+        <span class="submit-err">{{ error }}</span>
+      {% endif %}
     </form>
   </section>
 </div>
@@ -53,12 +56,12 @@
       First, either sign up or login. <br />
 
       From here you will have the option of creating a new character. In the event you have created one or more characters they will be listed out where you can view your character in detail and edit as needed. <br />
-      
+
       Your character’s most important information is displayed at the top and the rest of the information can be written into the notes section. <br />
-      
+
       In the unfortunate event your character perished through a harsh dungeon or by the whims of the dice gods you also have the option of deleting your character. <br />
-      
-      Happy adventuring! 
+
+      Happy adventuring!
   </p>
 </div>
 
