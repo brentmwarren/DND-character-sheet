@@ -1,0 +1,102 @@
+body {
+    background-image:url('https://i.pinimg.com/originals/c1/b1/e2/c1b1e237c954d9b35703a3bb8671bc4a.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+}
+
+
+#devs_title {
+    font-family: fantasy; 
+    text-align: center;
+    font-size: 60px;
+}
+
+h2, p, .button {
+    font-family: fantasy; 
+}
+
+.flex-grid {
+    display: flex;
+  }
+  .col {
+    flex: 1;
+  }
+
+
+/* below is for the meet the devs cards */
+
+/* Three columns side by side */
+
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+.developers-column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0% 5%;
+  }
+  
+  /* Display the columns below each other instead of side by side on small screens */
+  @media screen and (max-width: 650px) {
+    .developers-column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  /* Add some shadows to create a card effect */
+  .developers-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.55);
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+  
+  /* Some left and right padding inside the container */
+  .developer-container {
+    padding: 0 16px;
+  }
+  
+  /* Clear floats */
+  .developer-container::after, .developers-row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .developer-title {
+    color: black;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+
+  .developer-picture {
+    margin-bottom: 10px;
+  }
+
+.dev-button {
+  margin:0 auto !important;
+}

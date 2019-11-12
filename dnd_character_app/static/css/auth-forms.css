@@ -1,0 +1,90 @@
+body {
+  background: url("/static/images/hall-edited.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.jumbotron {
+  max-width: 540px;
+}
+
+.login-form {
+  margin: 60px auto;
+}
+
+.submit-err {
+  color: red;
+  font-family: "Arial";
+  margin: 10px 10px;
+}
+
+.signup-form {
+  margin: 40px 0 0 auto;
+  background: url("../images/8izraLqeT copy.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px;
+  margin: 0 auto;
+}
+
+/* for button on form */
+.btn-secondary {
+  font-family: fantasy;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-color: white;
+  box-shadow: 1px 1px 2px 2px black;
+}
+
+.btn-secondary:hover {
+  color: black;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-color: white;
+}
+
+/* below is for getting the login form and sign up form to be the same format */
+.form-control {
+  box-shadow: 1px 1px 2px 2px black;
+}
+
+.intro-content {
+  color: white;
+  font-family: fantasy;
+  font-size: 20px;
+}
+
+
+.introduction-header {
+  margin-top: 2.2%;
+  color: white;
+  font-family: fantasy;
+  font-size: 60px;
+}
+
+.introduction {
+  text-align: center;
+  margin-right: 10%;
+  margin-left: 10%
+}
+
+.user-funnel {
+  text-align: center;
+  color: white;
+  font-family: fantasy;
+  font-size: 20px;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.funnel-header {
+  margin-top: 3%;
+  font-size: 40px;
+}
+
+.form-section {
+  background: rgb(255, 255, 255, 0.8);
+  box-shadow: 3px 3px 5px 5px black;
+  font-family: fantasy;
+}

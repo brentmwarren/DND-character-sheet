@@ -1,0 +1,7 @@
+.navbar {
+    font-family: fantasy;
+    font-weight: bold;
+    box-shadow: 3px 3px 5px 6px black;  
+    text-shadow: 3px 3px 5px black;
+    background-image: linear-gradient(black, rgb(48, 48, 48), black);
+}

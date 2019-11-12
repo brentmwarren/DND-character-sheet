@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/developers.css' %}">
+  <title>About the Devs</title>
+{% endblock %}
+
+{% block content %}
+
+<br>
+<h1 id="devs_title">Meet the developers!</h1>
+    <div class="developers-row">
+        <div class="developers-column">
+          <div class="developers-card">
+            <img src="/static/images/brent-copy.jpg" alt="Brent" style="width:100%" min-width="200px" class="developer-picture">
+            <div class="developer-container">
+              <h2>Brent Warren</h2>
+              <p class="developer-title">Back end barbarian</p>
+              <p>In addition to slaying code, Brent is also known to tear up the slopes at Tahoe and slam down some ales barbarian style.</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="developers-column">
+          <div class="developers-card">
+            <img src="https://avatars.git.generalassemb.ly/u/23266?s=400" alt="Lindsey" style="width:100%" min-width="200px" class="developer-picture">
+            <div class="developer-container">
+              <h2>Lindsey Hiltner</h2>
+              <p class="developer-title">Coding Wizard</p>
+              <p>When Lindsey is not using her magic to destory coding challenges you can find her hiking in the bay area or hanging out with puppies.</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="developers-column">
+          <div class="developers-card">
+            <img src="/static/images/20170730_112431.jpg" alt="David" style="width:100%" min-width="200px" class="developer-picture">
+            <div class="developer-container">
+              <h2>David McGrouther</h2>
+              <p class="developer-title">Front end fighter</p>
+              <p>While not coding in JS or Python, David is a big fan of all things science fiction and fantasy, painting miniatures, working out/yoga, and playing tabletop games.</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% endblock %}

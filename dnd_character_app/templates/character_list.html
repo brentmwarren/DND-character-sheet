@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/character_list.css' %}">
+  <title>Your Characters</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="character-list-header">
+  <div class="character-list-welcome">
+    Welcome to the realm!
+  </div>
+  <a class="character-list-create-link" href="{% url 'character_create' %}">
+    <button class="character-list-create btn btn-outline-danger">Create a Character</button>
+  </a>
+</div>
+
+<h1 class="character-list-heading">
+  Your Characters
+</h1>
+<ul class="character-list list-group">
+  {% for character in characters %}
+  <a class="character-list-item list-group-item"
+     href="{% url 'character_detail' pk=character.pk %}">
+    <li>
+      {{ character.name }}
+    </li>
+  </a>
+  {% endfor %}
+</ul>
+<a class="dev-button character-list-create btn btn-outline-danger" href="{% url 'developers' %}">Meet the Devs!</a>
+</div>
+{% endblock %}
