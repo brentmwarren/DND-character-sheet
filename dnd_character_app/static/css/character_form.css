@@ -1,0 +1,27 @@
+body {
+    background: #f8f2df;
+    background: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbarriodogg.com%2Fwp-content%2Fuploads%2F2018%2F11%2FWEBSITE-WOOD-BACKGROUND.jpg&f=1&nofb=1");
+  }
+
+.character-create-body {
+  background-size: cover;
+  padding: 15px 30px 60px 30px;
+  margin-top: 2%;
+  background-image: url("http://i.stack.imgur.com/kb0Zm.jpg");
+  box-shadow: 3px 3px 5px 5px black;
+}
+
+.save-btn {
+  font-family: fantasy;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-color: white;
+  box-shadow: 1px 1px 2px 2px black;
+  float: right;
+}
+
+.save-btn:hover {
+  color: black;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-color: white;
+}
