@@ -14,6 +14,12 @@ body {
   margin: 60px auto;
 }
 
+.submit-err {
+  color: red;
+  font-family: "Arial";
+  margin: 10px 10px;
+}
+
 .signup-form {
   margin: 40px 0 0 auto;
   background: url("../images/8izraLqeT copy.png");
@@ -22,11 +28,6 @@ body {
   padding: 50px;
   margin: 0 auto;
 }
-
-
-
-
-
 
 /* for button on form */
 .btn-secondary {
