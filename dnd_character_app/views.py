@@ -60,10 +60,9 @@ def character_create(request):
       )
       return redirect('character_detail', pk=character.pk)
     else:
-      if (data['name'] == ''):
+      data = form.errors
+      if data.get('name') is not None:
         context = {'error': 'Please, enter a name'}
-      else:
-        data['name'] == 'Please enter a name'
       return render(request, 'character_form.html', context)
   else:
     form = CharacterForm()
