@@ -21,6 +21,9 @@
         <input class="form-control" type="password" name="password" id="password" maxlength="25" minlength="4" required>
       </div>
       <button type="submit" class="btn btn-secondary">Log In</button>
+      {% if error %}
+        <span class="submit-err">{{ error }}</span>
+      {% endif %}
     </form>
   </section>
 </div>

@@ -3,7 +3,6 @@ from django.contrib import auth
 from django.contrib.auth.models import User
 
 from dnd_character_app.models import Character
-# from .forms import LoginForm
 
 # Create your views here.
 
@@ -19,12 +18,14 @@ def signup(request):
         if password == password2:
             if User.objects.filter(username=username).exists():
                 context = {
+                    'field': 'username',
                     'error': 'Username is already taken.',
                 }
                 return render(request, 'landing.html', context)
             else:
                 if User.objects.filter(email=email).exists():
                     context = {
+                        'field': 'email',
                         'error': 'That email already exists.',
                     }
                     return render(request, 'landing.html', context)
@@ -40,6 +41,7 @@ def signup(request):
                     return redirect('character_list')
         else:
             context = {
+                'field': ['password', 'password2'],
                 'error': 'Passwords do not match.',
             }
             return render(request, 'landing.html', context)
