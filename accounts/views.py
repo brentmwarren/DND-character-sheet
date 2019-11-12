@@ -1,50 +1,37 @@
+import json
+
 from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.contrib.auth.models import User
+from django.http import JsonResponse
+from django.views.decorators.http import require_http_methods
 
 from dnd_character_app.models import Character
-# from .forms import LoginForm
 
 # Create your views here.
 
+@require_http_methods(['POST'])
 def signup(request):
-    if request.method == 'POST':
-        first_name = request.POST['first_name']
-        last_name = request.POST['last_name']
-        username = request.POST['username']
-        email = request.POST['email']
-        password = request.POST['password']
-        password2 = request.POST['password2']
+    new_user_info = json.loads(request.body)
+    username = new_user_info['username']
+    email = new_user_info['email']
 
-        if password == password2:
-            if User.objects.filter(username=username).exists():
-                context = {
-                    'error': 'Username is already taken.',
-                }
-                return render(request, 'landing.html', context)
-            else:
-                if User.objects.filter(email=email).exists():
-                    context = {
-                        'error': 'That email already exists.',
-                    }
-                    return render(request, 'landing.html', context)
-                else:
-                    user = User.objects.create_user(
-                        username=username,
-                        email=email,
-                        password=password,
-                        first_name=first_name,
-                        last_name=last_name,
-                    )
-                    user.save()
-                    return redirect('character_list')
-        else:
-            context = {
-                'error': 'Passwords do not match.',
-            }
-            return render(request, 'landing.html', context)
+    errors = {}
+    if User.objects.filter(username=username).exists():
+        errors['username'] = 'Username is taken'
+    if User.objects.filter(email=email).exists():
+        errors['email'] = 'Invalid email'
+
+    if not errors:
+        new_user_info.pop('password2')
+        user = User.objects.create_user(
+            **new_user_info,
+        )
+        user.save()
+        auth.login(request, user)
+        return JsonResponse({}, status=200)
     else:
-        return render(request, 'landing.html')
+        return JsonResponse(errors, status=400)
 
 
 def login(request):
