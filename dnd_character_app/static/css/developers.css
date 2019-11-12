@@ -96,3 +96,7 @@ html {
   .developer-picture {
     margin-bottom: 10px;
   }
+
+.dev-button {
+  margin:0 auto !important;
+}
