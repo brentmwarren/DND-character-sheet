@@ -11,7 +11,7 @@ body {
   box-shadow: 3px 3px 5px 5px black;
 }
 
-.btn {
+.save-btn {
   font-family: fantasy;
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
@@ -20,7 +20,7 @@ body {
   float: right;
 }
 
-.btn:hover {
+.save-btn:hover {
   color: black;
   background-color: rgb(255, 255, 255, 0.5);
   border-color: white;
