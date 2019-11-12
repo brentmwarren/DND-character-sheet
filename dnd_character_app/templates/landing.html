@@ -6,7 +6,14 @@
 {% endblock %}
 
 {% block content %}
-<body class="landing">
+<body>
+<div class = "introduction">
+    <h1 class ="introduction-header">DnD Character Creator</h1>
+    <p class="introduction intro-content">
+        Well met traveler!<br />
+        You have just found a portal to writing down your character information for Dungeons And Dragons.<br />
+        Oh, and did we mention this portal costs you zero gold? Not even one copper to use.</p>
+  </div>
 <div class="container">
   <section class="form-section jumbotron signup-form">
     <h1>Create an Account</h1>
@@ -39,6 +46,20 @@
       <button class="btn btn-secondary" type="submit">Sign Up</button>
     </form>
   </section>
+</div>
+<div class="user-funnel">
+  <h1 class = "funnel-header">How to use this portal</h1>
+  <p>
+      First, either sign up or login. <br />
+
+      From here you will have the option of creating a new character. In the event you have created one or more characters they will be listed out where you can view your character in detail and edit as needed. <br />
+      
+      Your character’s most important information is displayed at the top and the rest of the information can be written into the notes section. <br />
+      
+      In the unfortunate event your character perished through a harsh dungeon or by the whims of the dice gods you also have the option of deleting your character. <br />
+      
+      Happy adventuring! 
+  </p>
 </div>
 
 {% endblock %}
