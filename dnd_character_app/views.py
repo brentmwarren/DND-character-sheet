@@ -3,6 +3,7 @@ import json
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
+from django.core.exceptions import PermissionDenied
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_http_methods
 from django.utils.text import slugify
@@ -30,6 +31,8 @@ def character_list(request):
 @login_required
 def character_detail(request, pk):
   character = Character.objects.get(id=pk)
+  if character.user != request.user:
+    raise PermissionDenied
   context = {"character":character}
   return render(request, 'character_detail.html', context)
 
@@ -69,6 +72,9 @@ def character_create(request):
 @login_required
 @require_http_methods(['POST'])
 def character_edit(request, pk):
+    character = Character.objects.get(pk=pk)
+    if character.user != request.user:
+        raise PermissionDenied
     form = CharacterEditForm(json.loads(request.body))
     if form.is_valid():
         data = form.cleaned_data
@@ -80,5 +86,8 @@ def character_edit(request, pk):
 
 @login_required
 def character_delete(request, pk):
-  Character.objects.get(id=pk).delete()
+  character = Character.objects.get(pk=pk)
+  if character.user != request.user:
+      raise PermissionDenied
+  character.delete()
   return redirect('character_list')
