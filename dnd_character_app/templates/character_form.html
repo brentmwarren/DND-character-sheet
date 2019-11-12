@@ -3,13 +3,15 @@
 
 {% block head %}
   <link rel="stylesheet" href="{% static 'css/character_create_edit.css' %}">
+  <link rel="stylesheet" href="{% static 'css/character_form.css' %}">
   <title>Create a Character</title>
 {% endblock %}
 
 {% block content %}
 
-<h1>{{ header }}</h1>
+
 <section class="character-create-body container">
+  <h1>{{ header }}</h1>
   <form action="{% url 'character_create' %}" method="POST" class="character-create-form">
     {% csrf_token %}
     <div class="form-group">
