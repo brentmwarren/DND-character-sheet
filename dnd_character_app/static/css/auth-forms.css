@@ -1,6 +1,8 @@
 body {
-  background: url("https://media.giphy.com/media/OK5LK5zLFfdm/giphy.gif");
+  background: url("https://cdna.artstation.com/p/assets/images/images/005/450/924/large/ian-campbell-shot1-watermark.jpg?1545535463");
+  background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
 }
 
@@ -18,28 +20,19 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 50px;
+  margin: 0 auto;
 }
 
-.landing h1 {
-  justify-content: center;
-}
 
-.landing form {
-  padding: 15px;
-}
 
+<<<<<<< HEAD
 .landing {
   background: url("https://i.pinimg.com/originals/c1/b1/e2/c1b1e237c954d9b35703a3bb8671bc4a.jpg");
 }
+=======
+>>>>>>> 707b0dd4045a0197e1b8a2ea5137848379b87628
 
-.form-section {
-  background: rgb(255, 255, 255, 0.8);
-  box-shadow: 3px 3px 5px 5px black;
-}
 
-#password, #username {
-  box-shadow: 1px 1px 2px 2px black;
-}
 
 /* for button on form */
 .btn-secondary {
@@ -54,4 +47,49 @@ body {
   color: black;
   background-color: rgb(255, 255, 255, 0.5);
   border-color: white;
+}
+
+/* below is for getting the login form and sign up form to be the same format */
+.form-control {
+  box-shadow: 1px 1px 2px 2px black;
+}
+
+.intro-content {
+  color: white;
+  font-family: fantasy;
+  font-size: 20px;
+}
+
+
+.introduction-header {
+  margin-top: 2.2%;
+  color: white;
+  font-family: fantasy;
+  font-size: 60px;
+}
+
+.introduction {
+  text-align: center;
+  margin-right: 10%;
+  margin-left: 10%
+}
+
+.user-funnel {
+  text-align: center;
+  color: white;
+  font-family: fantasy;
+  font-size: 20px;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.funnel-header {
+  margin-top: 3%;
+  font-size: 40px;
+}
+
+.form-section {
+  background: rgb(255, 255, 255, 0.8);
+  box-shadow: 3px 3px 5px 5px black;
+  font-family: fantasy;
 }
