@@ -13,34 +13,22 @@ from .forms import CharacterForm, CharacterEditForm
 # Create your views here.
 
 def home(request):
-  return HttpResponse("Goodbye rocket ship. Hello Home.")
+  return render(request, 'landing.html')
 
 
 def developers(request):
     return render(request, 'developers.html')
 
 
-def api_characters(request):
-  all_characters = Character.objects.all()
-  data = []
-  for character in all_characters:
-    data.append({"name": character.name})
-  return JsonResponse({
-    "data": data,
-    },
-    status=200
-  )
-
-
 @login_required
 def character_list(request):
-  characters = Character.objects.all()
+  characters = Character.objects.filter(user=request.user)
   context = {"characters":characters}
   return render(request, 'character_list.html', context)
 
 
 @login_required
-def character_detail(request,pk):
+def character_detail(request, pk):
   character = Character.objects.get(id=pk)
   context = {"character":character}
   return render(request, 'character_detail.html', context)

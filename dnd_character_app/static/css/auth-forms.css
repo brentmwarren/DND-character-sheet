@@ -16,7 +16,8 @@ body {
 
 .submit-err {
   color: red;
-  margin-left: 10px;
+  font-family: "Arial";
+  margin: 10px 10px;
 }
 
 .signup-form {
